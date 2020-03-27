@@ -1,65 +1,76 @@
 /* Include the padding and border in an element's total width and height */
 * {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
-}
-  
-.toggleBtn {
-    cursor: pointer;
-    background: #eee;
-    font-size: 1.5em;
-    transition: 0.2s;
-    display: inline-block;
-    padding: .2em;
-  
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
 }
 
-.settings {
-    
-    margin: 10px;
+.toggleBtn, #clock {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px 0 10px 10px;
+  cursor: pointer;
+  background: #eee;
+  font-size: 1.5em;
+  transition: 0.2s;
+  padding: 10px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hidden {
+  display:none;
+}
+.enabled {
+  background: #333; 
+  color: white; 
+}
+
+#offset * {
+  margin: 10px 0 20px 10px;
+  padding: 10px;
 }
 
 
 /* Remove margins and padding from the list */
 table {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
 }
-  
+
 /* Style the list items */
 table tr {
-    transition: 0.2s;
-    cursor: pointer;
+  transition: 0.2s;
+  cursor: pointer;
 /*
-    position: relative;
-    padding: 1em .5em 1em 3em;
-    background: #eee;
-    font-size: 1em;
+  position: relative;
+  padding: 1em .5em 1em 3em;
+  background: #eee;
+  font-size: 1em;
 */
-    
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  table tr:hover {
-    background: #ddd;
-  }
-  
-  .checked {
-    background: #888;
-    color: #fff;
-  }
-  
-  .checked:hover {
-    background: #666;
-    color: #fff;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+table tr:hover {
+  background: #ddd;
+}
+
+.checked {
+  background: #888;
+  color: #fff;
+}
+
+.checked:hover {
+  background: #666;
+  color: #fff;
 }
 
 
@@ -67,21 +78,21 @@ table tr {
 Generic Styling, for Desktops/Laptops 
 */
 table { 
-    width: 100%; 
-    border-collapse: collapse; 
-  }
-  /* Zebra striping 
-  tr:nth-of-type(odd) { 
-    background: #eee; 
-  }
-  */
-  th { 
-    background: #333; 
-    color: white; 
-    font-weight: bold; 
-  }
-  td, th { 
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    text-align: left; 
-  }
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping 
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+*/
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
