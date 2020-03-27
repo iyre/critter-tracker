@@ -1,0 +1,87 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+  
+.toggleBtn {
+    cursor: pointer;
+    background: #eee;
+    font-size: 1.5em;
+    transition: 0.2s;
+    display: inline-block;
+    padding: .2em;
+  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.settings {
+    
+    margin: 10px;
+}
+
+
+/* Remove margins and padding from the list */
+table {
+    margin: 0;
+    padding: 0;
+}
+  
+/* Style the list items */
+table tr {
+    transition: 0.2s;
+    cursor: pointer;
+/*
+    position: relative;
+    padding: 1em .5em 1em 3em;
+    background: #eee;
+    font-size: 1em;
+*/
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  table tr:hover {
+    background: #ddd;
+  }
+  
+  .checked {
+    background: #888;
+    color: #fff;
+  }
+  
+  .checked:hover {
+    background: #666;
+    color: #fff;
+}
+
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping 
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  */
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }

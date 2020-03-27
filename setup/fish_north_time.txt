@@ -1,0 +1,81 @@
+Name	Image	0	Location	Size	Time	Duration	1	2	3	4	5	6	7	8	9	10	11	12
+Anchovy	Anchovy NH Icon	200	Sea	2	4	21	1	1	1	1	1	1	1	1	1	1	1	1
+Angelfish	Angelfish HHD Icon	3000	River	2	16	9	0	0	0	0	1	1	1	1	1	1	0	0
+Arapaima	Arapaima HHD Icon	10000	River	6	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Arowana	Arowana HHD Icon	10000	River	4	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Barred knifejaw	Barred Knifejaw HHD Icon	5000	Sea	3	0	24	0	0	1	1	1	1	1	1	1	1	1	0
+Barreleye	Barreleye NH Icon	15000	Sea	2	21	4	1	1	1	1	1	1	1	1	1	1	1	1
+Betta	Betta NH Icon	2500	River	2	9	16	0	0	0	0	1	1	1	1	1	1	0	0
+Bitterling	Bitterling HHD Icon	900	River	1	0	24	1	1	1	0	0	0	0	0	0	0	1	1
+Black bass	Black Bass HHD Icon	400	River	4	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Blowfish	Blowfish HHD Icon	5000	Sea	3	18	4	1	1	0	0	0	0	0	0	0	0	1	1
+Blue marlin	Blue Marlin HHD Icon	10000	Pier	6	0	24	1	1	1	1	0	0	1	1	1	0	1	1
+Bluegill	Bluegill HHD Icon	180	River	2	9	16	1	1	1	1	1	1	1	1	1	1	1	1
+Butterfly fish	Butterfly Fish (New Leaf icon)	1000	Sea	2	0	24	0	0	0	1	1	1	1	1	1	0	0	0
+Carp	Carp HHD Icon	300	Pond	4	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Catfish	Catfish HHD Icon	800	Pond	4	16	9	0	0	0	0	1	1	1	1	1	1	0	0
+Char	Char HHD Icon	3800	River (Clifftop) Pond	3	16	9	0	0	1	1	1	1	0	0	1	1	1	0
+Cherry salmon	Cherry Salmon HHD Icon	1000	River (Clifftop) Pond	3	16	9	0	0	1	1	1	1	0	0	1	1	1	0
+Clownfish	Clownfish HHD Icon	650	Sea	1	0	24	0	0	0	1	1	1	1	1	1	0	0	0
+Coelacanth	Coelacanth HHD Icon	15000	Sea (Raining)	6	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Crawfish	Crawfish HHD Icon	200	Pond	2	0	24	0	0	0	1	1	1	1	1	1	0	0	0
+Crucian carp	Crucian Carp HHD Icon	160	River	2	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Dab	Dab HHD Icon	300	Sea	3	0	24	1	1	1	1	0	0	0	0	0	1	1	1
+Dace	Dace HHD Icon	240	River	3	16	9	1	1	1	1	1	1	1	1	1	1	1	1
+Dorado	Dorado HHD Icon	15000	River	5	4	21	0	0	0	0	0	1	1	1	1	0	0	0
+Football fish	Football Fish HHD Icon	2500	Sea	4	16	9	1	1	1	0	0	0	0	0	0	0	1	1
+Freshwater goby	Freshwater Goby HHD Icon	400	River	2	16	9	1	1	1	1	1	1	1	1	1	1	1	1
+Frog	Frog HHD Icon	120	Pond	2	0	24	0	0	0	0	1	1	1	1	0	0	0	0
+Gar	Gar HHD Icon	6000	Pond	6	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Giant snakehead	Giant Snakehead HHD Icon	5500	Pond	5	9	16	0	0	0	0	0	1	1	1	0	0	0	0
+Giant trevally	Giant Trevally HHD Icon	4500	Pier	5	0	24	0	0	0	0	1	1	1	1	1	1	0	0
+Golden trout	Golden Trout NH Icon	15000	River (Clifftop)	3	16	9	0	0	1	1	1	0	0	0	1	1	1	0
+Goldfish	Goldfish HHD Icon	1300	Pond	1	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Great white shark	Shark HHD Icon	15000	Sea	6 (Fin)	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Guppy	Guppy HHD Icon	1300	River	1	9	16	0	0	0	1	1	1	1	1	1	1	1	0
+Hammerhead shark	Hammerhead Shark HHD Icon	8000	Sea	6 (Fin)	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Horse mackerel	Horse Mackerel HHD Icon	150	Sea	2	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Killifish	Killifish HHD Icon	300	Pond	1	0	24	0	0	0	1	1	1	1	1	0	0	0	0
+King salmon	King Salmon HHD Icon	1800	River (Mouth)	6	0	24	0	0	0	0	0	0	0	0	1	0	0	0
+Koi	Koi HHD Icon	4000	Pond	4	16	9	1	1	1	1	1	1	1	1	1	1	1	1
+Loach	Loach HHD Icon	400	River	2	0	24	0	0	1	1	1	0	0	0	0	0	0	0
+Mahi-mahi	Mahi-Mahi NH Icon	6000	Pier	5	0	24	0	0	0	0	1	1	1	1	1	1	0	0
+Mitten crab	Mitten Crab HHD Icon	2000	River	2	16	9	0	0	0	0	0	0	0	0	1	1	1	0
+Moray eel	Moray Eel HHD Icon	2000	Sea	Narrow	0	24	0	0	0	0	0	0	0	1	1	1	0	0
+Napoleonfish	Napoleonfish HHD Icon	10000	Sea	6	4	21	0	0	0	0	0	0	1	1	0	0	0	0
+Neon tetra	Neon Tetra HHD Icon	500	River	1	9	16	0	0	0	1	1	1	1	1	1	1	1	0
+Nibble fish	Nibble Fish HHD Icon	1500	River	2	9	16	0	0	0	0	1	1	1	1	1	0	0	0
+Oarfish	Oarfish HHD Icon	9000	Sea	6	0	24	1	1	1	1	1	0	0	0	0	0	0	1
+Ocean sunfish	Ocean Sunfish HHD Icon	4000	Sea	6 (Fin)	4	21	0	0	0	0	0	0	1	1	1	0	0	0
+Olive flounder	Olive Flounder HHD Icon	800	Sea	5	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Pale chub	Pale Chub HHD Icon	200	River	1	9	16	1	1	1	1	1	1	1	1	1	1	1	1
+Pike	Pike HHD Icon	1800	River	5	0	24	0	0	0	0	0	0	0	0	1	1	1	1
+Piranha	Piranha HHD Icon	2500	River	2	9	16	0	0	0	0	0	1	1	1	1	0	0	0
+Pond smelt	Pond Smelt HHD Icon	500	River	2	0	24	1	1	0	0	0	0	0	0	0	0	0	1
+Pop-eyed goldfish	Popeyed Goldfish HHD Icon	1300	Pond	1	9	16	1	1	1	1	1	1	1	1	1	1	1	1
+Puffer fish	Puffer Fish HHD Icon	250	Sea	3	0	24	0	0	0	0	0	0	1	1	1	0	0	0
+Rainbowfish	Rainbowfish NH Icon	800	River	1	9	16	0	0	0	0	1	1	1	1	1	1	0	0
+Ranchu goldfish	Ranchu Goldfish NH Icon	4500	Pond	2	9	16	1	1	1	1	1	1	1	1	1	1	1	1
+Ray	Ray HHD Icon	3000	Sea	5	4	21	0	0	0	0	0	0	0	1	1	1	1	0
+Red snapper	Red Snapper HHD Icon	3000	Sea	4	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Ribbon eel	Ribbon Eel HHD Icon	600	Sea	Narrow	0	24	0	0	0	0	0	1	1	1	1	1	0	0
+Saddled bichir	Saddled Bichir HHD Icon	4000	River	4	21	4	1	1	1	0	0	0	0	0	0	0	0	1
+Salmon	Salmon HHD Icon	700	River (Mouth)	4	0	24	0	0	0	0	0	0	0	0	1	0	0	0
+Saw shark	Saw Shark HHD Icon	12000	Sea	6 (Fin)	16	9	0	0	0	0	0	1	1	1	1	0	0	0
+Sea bass	Sea Bass HHD Icon	400	Sea	5	0	24	1	1	1	1	1	1	1	1	1	1	1	1
+Sea butterfly	Sea Butterfly HHD Icon	1000	Sea	1	0	24	1	1	1	0	0	0	0	0	0	0	0	1
+Seahorse	Seahorse (New Leaf icon)	1100	Sea	1	0	24	0	0	0	1	1	1	1	1	1	1	1	0
+Snapping turtle	Snapping Turtle NH Icon	5000	River	5	21	4	0	0	0	1	1	1	1	1	1	1	0	0
+Soft-shelled turtle	Soft-Shelled Turtle HHD Icon	3750	River	4	16	9	0	0	0	0	0	0	0	1	1	0	0	0
+Squid	Squid HHD Icon	500	Sea	3	0	24	1	1	1	1	1	1	1	1	0	0	0	1
+Stringfish	Stringfish HHD Icon	15000	River (Clifftop)	5	16	9	1	1	1	0	0	0	0	0	0	0	0	1
+Sturgeon	Sturgeon HHD Icon	10000	River (Mouth)	6	0	24	1	1	1	0	0	0	0	0	1	1	1	1
+Suckerfish	Suckerfish NH Icon	1500	Sea	 6 (Fin)	0	24	0	0	0	0	0	1	1	1	1	0	0	0
+Surgeonfish	Surgeonfish HHD Icon	1000	Sea	2	0	24	0	0	0	1	1	1	1	1	1	0	0	0
+Sweetfish	Sweetfish HHD Icon	900	River	3	0	24	0	0	0	0	0	0	1	1	1	0	0	0
+Tadpole	Tadpole HHD Icon	100	Pond	1	0	24	0	0	1	1	1	1	1	0	0	0	0	0
+Tilapia	Tilapia NH Icon	800	River	3	0	24	0	0	0	0	0	1	1	1	1	1	0	0
+Tuna	Tuna HHD Icon	7000	Pier	6	0	24	1	1	1	1	0	0	0	0	0	0	1	1
+Whale shark	Whale Shark HHD Icon	13000	Sea	6 (Fin)	0	24	0	0	0	0	0	1	1	1	1	0	0	0
+Yellow perch	Yellow Perch HHD Icon	300	River	3	0	24	1	1	1	0	0	0	0	0	0	1	1	1
+Zebra turkeyfish	Zebra Turkeyfish HHD Icon	500	Sea	3	0	24	0	0	0	1	1	1	1	1	1	1	1	0
