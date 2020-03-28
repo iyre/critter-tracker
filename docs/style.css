@@ -5,7 +5,7 @@
   font-size: 1.2em;
 }
 
-.toggleBtn, #clock {
+.toggleBtn, .switchBtn, #clock {
   display: inline-block;
   cursor: pointer;
   margin: 10px 0 10px 10px;
@@ -19,6 +19,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-transform: capitalize;
 }
 
 .hidden {

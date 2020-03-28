@@ -37,6 +37,22 @@ toggleButtons.forEach((btn) => {
   }
 });
 
+var region = readSetting("hemisphere");
+var hemisphere = document.getElementById("hemisphere");
+console.log(region);
+hemisphere.innerHTML = region;
+
+function changeHemisphere() {
+  if (region === "northern") {
+    region = "southern";
+  } else {
+    region = "northern";
+  }
+  hemisphere.innerHTML = region;
+  writeSetting('hemisphere', region);
+  buildList(fish);
+}
+
 function toggleButton(event) {
   var toggle_id = event.target.id;
   var hide = readSetting(toggle_id);
@@ -48,12 +64,14 @@ function toggleButton(event) {
 
 function setTime() {
   var newTime = document.getElementById("datetime").value;
-  console.log(newTime);
+  //console.log(newTime);
   if (newTime == "") {return;}
-  console.log(Date.now());
-  console.log(Date.parse(newTime));
+  //console.log(Date.now());
+  //console.log(Date.parse(newTime));
   offset = Date.parse(newTime) - Date.now();
   writeSetting("offset", offset);
+  time();
+  buildList(fish);
 }
 
 function showOffset() {
@@ -75,6 +93,7 @@ function time() {
   var m = d.getMinutes();
   hour = d.getHours();
   month = d.getMonth();
+  //console.log(month);
 
   if (last_hour != hour) {buildList(fish);}
   last_hour = hour;
@@ -92,15 +111,12 @@ function buildList(data) {
   for (var i in data) {
     //console.log(isCaught(i));
     //console.log(settings['hide']);
-    var region = readSetting("hemisphere");
-    var d = new Date();
-    var month = d.getMonth();
-    var hour = d.getHours();
     var months = data[i][region];
     var hours = data[i].hours;
     //console.log(hideCaught && (!months.includes(month) || !hours.includes(hour)));
 		if (isCaught(i) && hideCaught) {
-			console.log('hide: ' + i);
+      //console.log('hide: ' + i);
+      continue
     }
     
     else if (hideTime && (!months.includes(month) || !hours.includes(hour))) {
