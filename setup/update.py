@@ -9,7 +9,7 @@ data = {}
 def add_creature(entry,index):
     id1 = entry[0].lower().replace(' ','_')
     months = []
-    month_index = 1
+    month_index = 0
     for a in entry[6:]:
         if int(a) == 1:
             months.append(month_index)

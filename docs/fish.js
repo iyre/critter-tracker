@@ -24,6 +24,7 @@ var fish = {
         "location": "Sea", 
         "name": "Anchovy", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -34,12 +35,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 200, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -50,8 +51,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "angelfish": {
@@ -79,22 +79,22 @@ var fish = {
         "location": "River", 
         "name": "Angelfish", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 3000, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "arapaima": {
@@ -122,18 +122,18 @@ var fish = {
         "location": "River", 
         "name": "Arapaima", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 10000, 
         "size": "6", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "arowana": {
@@ -161,18 +161,18 @@ var fish = {
         "location": "River", 
         "name": "Arowana", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 10000, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "barred_knifejaw": {
@@ -207,6 +207,7 @@ var fish = {
         "location": "Sea", 
         "name": "Barred knifejaw", 
         "northern": [
+            2, 
             3, 
             4, 
             5, 
@@ -214,21 +215,20 @@ var fish = {
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 5000, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "barreleye": {
@@ -246,6 +246,7 @@ var fish = {
         "location": "Sea", 
         "name": "Barreleye", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -256,12 +257,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 15000, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -272,8 +273,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "betta": {
@@ -291,22 +291,22 @@ var fish = {
         "location": "River", 
         "name": "Betta", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 2500, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "bitterling": {
@@ -341,20 +341,20 @@ var fish = {
         "location": "River", 
         "name": "Bitterling", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
-            11, 
-            12
+            10, 
+            11
         ], 
         "price": 900, 
         "size": "1", 
         "southern": [
+            4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "black_bass": {
@@ -389,6 +389,7 @@ var fish = {
         "location": "River", 
         "name": "Black bass", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -399,12 +400,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 400, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -415,8 +416,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "blowfish": {
@@ -437,18 +437,18 @@ var fish = {
         "location": "Sea", 
         "name": "Blowfish", 
         "northern": [
+            0, 
             1, 
-            2, 
-            11, 
-            12
+            10, 
+            11
         ], 
         "price": 5000, 
         "size": "3", 
         "southern": [
+            4, 
             5, 
             6, 
-            7, 
-            8
+            7
         ]
     }, 
     "blue_marlin": {
@@ -483,28 +483,28 @@ var fish = {
         "location": "Pier", 
         "name": "Blue marlin", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
+            6, 
             7, 
             8, 
-            9, 
-            11, 
-            12
+            10, 
+            11
         ], 
         "price": 10000, 
         "size": "6", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ]
     }, 
     "bluegill": {
@@ -522,6 +522,7 @@ var fish = {
         "location": "River", 
         "name": "Bluegill", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -532,12 +533,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 180, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -548,8 +549,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "butterfly_fish": {
@@ -584,22 +584,22 @@ var fish = {
         "location": "Sea", 
         "name": "Butterfly fish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 1000, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "carp": {
@@ -634,6 +634,7 @@ var fish = {
         "location": "Pond", 
         "name": "Carp", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -644,12 +645,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 300, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -660,8 +661,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "catfish": {
@@ -689,22 +689,22 @@ var fish = {
         "location": "Pond", 
         "name": "Catfish", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 800, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "char": {
@@ -732,24 +732,24 @@ var fish = {
         "location": "River (Clifftop) Pond", 
         "name": "Char", 
         "northern": [
+            2, 
             3, 
             4, 
             5, 
-            6, 
+            8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 3800, 
         "size": "3", 
         "southern": [
+            2, 
             3, 
             4, 
-            5, 
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "cherry_salmon": {
@@ -777,24 +777,24 @@ var fish = {
         "location": "River (Clifftop) Pond", 
         "name": "Cherry salmon", 
         "northern": [
+            2, 
             3, 
             4, 
             5, 
-            6, 
+            8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 1000, 
         "size": "3", 
         "southern": [
+            2, 
             3, 
             4, 
-            5, 
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "clownfish": {
@@ -829,22 +829,22 @@ var fish = {
         "location": "Sea", 
         "name": "Clownfish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 650, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "coelacanth": {
@@ -879,6 +879,7 @@ var fish = {
         "location": "Sea (Raining)", 
         "name": "Coelacanth", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -889,12 +890,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 15000, 
         "size": "6", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -905,8 +906,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "crawfish": {
@@ -941,22 +941,22 @@ var fish = {
         "location": "Pond", 
         "name": "Crawfish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 200, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "crucian_carp": {
@@ -991,6 +991,7 @@ var fish = {
         "location": "River", 
         "name": "Crucian carp", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1001,12 +1002,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 160, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1017,8 +1018,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "dab": {
@@ -1053,24 +1053,24 @@ var fish = {
         "location": "Sea", 
         "name": "Dab", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 300, 
         "size": "3", 
         "southern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ]
     }, 
     "dace": {
@@ -1098,6 +1098,7 @@ var fish = {
         "location": "River", 
         "name": "Dace", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1108,12 +1109,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 240, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1124,8 +1125,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "dorado": {
@@ -1153,18 +1153,18 @@ var fish = {
         "location": "River", 
         "name": "Dorado", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 15000, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "football_fish": {
@@ -1192,20 +1192,20 @@ var fish = {
         "location": "Sea", 
         "name": "Football fish", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
-            11, 
-            12
+            10, 
+            11
         ], 
         "price": 2500, 
         "size": "4", 
         "southern": [
+            4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "freshwater_goby": {
@@ -1233,6 +1233,7 @@ var fish = {
         "location": "River", 
         "name": "Freshwater goby", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1243,12 +1244,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 400, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1259,8 +1260,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "frog": {
@@ -1295,18 +1295,18 @@ var fish = {
         "location": "Pond", 
         "name": "Frog", 
         "northern": [
+            4, 
             5, 
             6, 
-            7, 
-            8
+            7
         ], 
         "price": 120, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
-            2, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "gar": {
@@ -1334,18 +1334,18 @@ var fish = {
         "location": "Pond", 
         "name": "Gar", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 6000, 
         "size": "6", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "giant_snakehead": {
@@ -1363,16 +1363,16 @@ var fish = {
         "location": "Pond", 
         "name": "Giant snakehead", 
         "northern": [
+            5, 
             6, 
-            7, 
-            8
+            7
         ], 
         "price": 5500, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
-            2, 
-            12
+            11
         ]
     }, 
     "giant_trevally": {
@@ -1407,22 +1407,22 @@ var fish = {
         "location": "Pier", 
         "name": "Giant trevally", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 4500, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "golden_trout": {
@@ -1450,22 +1450,22 @@ var fish = {
         "location": "River (Clifftop)", 
         "name": "Golden trout", 
         "northern": [
+            2, 
             3, 
             4, 
-            5, 
+            8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 15000, 
         "size": "3", 
         "southern": [
+            2, 
             3, 
             4, 
-            5, 
+            8, 
             9, 
-            10, 
-            11
+            10
         ]
     }, 
     "goldfish": {
@@ -1500,6 +1500,7 @@ var fish = {
         "location": "Pond", 
         "name": "Goldfish", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1510,12 +1511,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 1300, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1526,8 +1527,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "great_white_shark": {
@@ -1555,18 +1555,18 @@ var fish = {
         "location": "Sea", 
         "name": "Great white shark", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 15000, 
         "size": "6 (Fin)", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "guppy": {
@@ -1584,26 +1584,26 @@ var fish = {
         "location": "River", 
         "name": "Guppy", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 1300, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "hammerhead_shark": {
@@ -1631,18 +1631,18 @@ var fish = {
         "location": "Sea", 
         "name": "Hammerhead shark", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 8000, 
         "size": "6 (Fin)", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "horse_mackerel": {
@@ -1677,6 +1677,7 @@ var fish = {
         "location": "Sea", 
         "name": "Horse mackerel", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1687,12 +1688,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 150, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1703,8 +1704,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "killifish": {
@@ -1739,20 +1739,20 @@ var fish = {
         "location": "Pond", 
         "name": "Killifish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
-            7, 
-            8
+            7
         ], 
         "price": 300, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
-            2, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "king_salmon": {
@@ -1787,12 +1787,12 @@ var fish = {
         "location": "River (Mouth)", 
         "name": "King salmon", 
         "northern": [
-            9
+            8
         ], 
         "price": 1800, 
         "size": "6", 
         "southern": [
-            3
+            2
         ]
     }, 
     "koi": {
@@ -1820,6 +1820,7 @@ var fish = {
         "location": "Pond", 
         "name": "Koi", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1830,12 +1831,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 4000, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -1846,8 +1847,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "loach": {
@@ -1882,16 +1882,16 @@ var fish = {
         "location": "River", 
         "name": "Loach", 
         "northern": [
+            2, 
             3, 
-            4, 
-            5
+            4
         ], 
         "price": 400, 
         "size": "2", 
         "southern": [
+            8, 
             9, 
-            10, 
-            11
+            10
         ]
     }, 
     "mahi-mahi": {
@@ -1926,22 +1926,22 @@ var fish = {
         "location": "Pier", 
         "name": "Mahi-mahi", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 6000, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "mitten_crab": {
@@ -1969,16 +1969,16 @@ var fish = {
         "location": "River", 
         "name": "Mitten crab", 
         "northern": [
+            8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 2000, 
         "size": "2", 
         "southern": [
+            2, 
             3, 
-            4, 
-            5
+            4
         ]
     }, 
     "moray_eel": {
@@ -2013,16 +2013,16 @@ var fish = {
         "location": "Sea", 
         "name": "Moray eel", 
         "northern": [
+            7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 2000, 
         "size": "Narrow", 
         "southern": [
+            1, 
             2, 
-            3, 
-            4
+            3
         ]
     }, 
     "napoleonfish": {
@@ -2050,14 +2050,14 @@ var fish = {
         "location": "Sea", 
         "name": "Napoleonfish", 
         "northern": [
-            7, 
-            8
+            6, 
+            7
         ], 
         "price": 10000, 
         "size": "6", 
         "southern": [
-            1, 
-            2
+            0, 
+            1
         ]
     }, 
     "neon_tetra": {
@@ -2075,26 +2075,26 @@ var fish = {
         "location": "River", 
         "name": "Neon tetra", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 500, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "nibble_fish": {
@@ -2112,20 +2112,20 @@ var fish = {
         "location": "River", 
         "name": "Nibble fish", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 1500, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "oarfish": {
@@ -2160,22 +2160,22 @@ var fish = {
         "location": "Sea", 
         "name": "Oarfish", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
-            12
+            11
         ], 
         "price": 9000, 
         "size": "6", 
         "southern": [
+            5, 
             6, 
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ]
     }, 
     "ocean_sunfish": {
@@ -2203,16 +2203,16 @@ var fish = {
         "location": "Sea", 
         "name": "Ocean sunfish", 
         "northern": [
+            6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 4000, 
         "size": "6 (Fin)", 
         "southern": [
+            0, 
             1, 
-            2, 
-            3
+            2
         ]
     }, 
     "olive_flounder": {
@@ -2247,6 +2247,7 @@ var fish = {
         "location": "Sea", 
         "name": "Olive flounder", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2257,12 +2258,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 800, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2273,8 +2274,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "pale_chub": {
@@ -2292,6 +2292,7 @@ var fish = {
         "location": "River", 
         "name": "Pale chub", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2302,12 +2303,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 200, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2318,8 +2319,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "pike": {
@@ -2354,18 +2354,18 @@ var fish = {
         "location": "River", 
         "name": "Pike", 
         "northern": [
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 1800, 
         "size": "5", 
         "southern": [
+            2, 
             3, 
             4, 
-            5, 
-            6
+            5
         ]
     }, 
     "piranha": {
@@ -2383,18 +2383,18 @@ var fish = {
         "location": "River", 
         "name": "Piranha", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 2500, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "pond_smelt": {
@@ -2429,16 +2429,16 @@ var fish = {
         "location": "River", 
         "name": "Pond smelt", 
         "northern": [
+            0, 
             1, 
-            2, 
-            12
+            11
         ], 
         "price": 500, 
         "size": "2", 
         "southern": [
+            5, 
             6, 
-            7, 
-            8
+            7
         ]
     }, 
     "pop-eyed_goldfish": {
@@ -2456,6 +2456,7 @@ var fish = {
         "location": "Pond", 
         "name": "Pop-eyed goldfish", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2466,12 +2467,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 1300, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2482,8 +2483,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "puffer_fish": {
@@ -2518,16 +2518,16 @@ var fish = {
         "location": "Sea", 
         "name": "Puffer fish", 
         "northern": [
+            6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 250, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
-            2, 
-            3
+            2
         ]
     }, 
     "rainbowfish": {
@@ -2545,22 +2545,22 @@ var fish = {
         "location": "River", 
         "name": "Rainbowfish", 
         "northern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 800, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ]
     }, 
     "ranchu_goldfish": {
@@ -2578,6 +2578,7 @@ var fish = {
         "location": "Pond", 
         "name": "Ranchu goldfish", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2588,12 +2589,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 4500, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2604,8 +2605,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "ray": {
@@ -2633,18 +2633,18 @@ var fish = {
         "location": "Sea", 
         "name": "Ray", 
         "northern": [
+            7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 3000, 
         "size": "5", 
         "southern": [
+            1, 
             2, 
             3, 
-            4, 
-            5
+            4
         ]
     }, 
     "red_snapper": {
@@ -2679,6 +2679,7 @@ var fish = {
         "location": "Sea", 
         "name": "Red snapper", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2689,12 +2690,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 3000, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2705,8 +2706,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "ribbon_eel": {
@@ -2741,20 +2741,20 @@ var fish = {
         "location": "Sea", 
         "name": "Ribbon eel", 
         "northern": [
+            5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 600, 
         "size": "Narrow", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            12
+            11
         ]
     }, 
     "saddled_bichir": {
@@ -2772,18 +2772,18 @@ var fish = {
         "location": "River", 
         "name": "Saddled bichir", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ], 
         "price": 4000, 
         "size": "4", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "salmon": {
@@ -2818,12 +2818,12 @@ var fish = {
         "location": "River (Mouth)", 
         "name": "Salmon", 
         "northern": [
-            9
+            8
         ], 
         "price": 700, 
         "size": "4", 
         "southern": [
-            3
+            2
         ]
     }, 
     "saw_shark": {
@@ -2851,18 +2851,18 @@ var fish = {
         "location": "Sea", 
         "name": "Saw shark", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 12000, 
         "size": "6 (Fin)", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "sea_bass": {
@@ -2897,6 +2897,7 @@ var fish = {
         "location": "Sea", 
         "name": "Sea bass", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2907,12 +2908,12 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 400, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
@@ -2923,8 +2924,7 @@ var fish = {
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "sea_butterfly": {
@@ -2959,18 +2959,18 @@ var fish = {
         "location": "Sea", 
         "name": "Sea butterfly", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ], 
         "price": 1000, 
         "size": "1", 
         "southern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "seahorse": {
@@ -3005,26 +3005,26 @@ var fish = {
         "location": "Sea", 
         "name": "Seahorse", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 1100, 
         "size": "1", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "snapping_turtle": {
@@ -3042,24 +3042,24 @@ var fish = {
         "location": "River", 
         "name": "Snapping turtle", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 5000, 
         "size": "5", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "soft-shelled_turtle": {
@@ -3087,14 +3087,14 @@ var fish = {
         "location": "River", 
         "name": "Soft-shelled turtle", 
         "northern": [
-            8, 
-            9
+            7, 
+            8
         ], 
         "price": 3750, 
         "size": "4", 
         "southern": [
-            2, 
-            3
+            1, 
+            2
         ]
     }, 
     "squid": {
@@ -3129,6 +3129,7 @@ var fish = {
         "location": "Sea", 
         "name": "Squid", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
@@ -3136,21 +3137,20 @@ var fish = {
             5, 
             6, 
             7, 
-            8, 
-            12
+            11
         ], 
         "price": 500, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
-            2, 
+            5, 
             6, 
             7, 
             8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "stringfish": {
@@ -3178,18 +3178,18 @@ var fish = {
         "location": "River (Clifftop)", 
         "name": "Stringfish", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ], 
         "price": 15000, 
         "size": "5", 
         "southern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "sturgeon": {
@@ -3224,24 +3224,24 @@ var fish = {
         "location": "River (Mouth)", 
         "name": "Sturgeon", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 10000, 
         "size": "6", 
         "southern": [
+            2, 
             3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "suckerfish": {
@@ -3276,18 +3276,18 @@ var fish = {
         "location": "Sea", 
         "name": "Suckerfish", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 1500, 
         "size": " 6 (Fin)", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "surgeonfish": {
@@ -3322,22 +3322,22 @@ var fish = {
         "location": "Sea", 
         "name": "Surgeonfish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 1000, 
         "size": "2", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "sweetfish": {
@@ -3372,16 +3372,16 @@ var fish = {
         "location": "River", 
         "name": "Sweetfish", 
         "northern": [
+            6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 900, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
-            2, 
-            3
+            2
         ]
     }, 
     "tadpole": {
@@ -3416,20 +3416,20 @@ var fish = {
         "location": "Pond", 
         "name": "Tadpole", 
         "northern": [
+            2, 
             3, 
             4, 
             5, 
-            6, 
-            7
+            6
         ], 
         "price": 100, 
         "size": "1", 
         "southern": [
-            1, 
+            0, 
+            8, 
             9, 
             10, 
-            11, 
-            12
+            11
         ]
     }, 
     "tilapia": {
@@ -3464,20 +3464,20 @@ var fish = {
         "location": "River", 
         "name": "Tilapia", 
         "northern": [
+            5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ], 
         "price": 800, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            12
+            11
         ]
     }, 
     "tuna": {
@@ -3512,22 +3512,22 @@ var fish = {
         "location": "Pier", 
         "name": "Tuna", 
         "northern": [
+            0, 
             1, 
             2, 
             3, 
-            4, 
-            11, 
-            12
+            10, 
+            11
         ], 
         "price": 7000, 
         "size": "6", 
         "southern": [
+            4, 
             5, 
             6, 
             7, 
             8, 
-            9, 
-            10
+            9
         ]
     }, 
     "whale_shark": {
@@ -3562,18 +3562,18 @@ var fish = {
         "location": "Sea", 
         "name": "Whale shark", 
         "northern": [
+            5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ], 
         "price": 13000, 
         "size": "6 (Fin)", 
         "southern": [
+            0, 
             1, 
             2, 
-            3, 
-            12
+            11
         ]
     }, 
     "yellow_perch": {
@@ -3608,22 +3608,22 @@ var fish = {
         "location": "River", 
         "name": "Yellow perch", 
         "northern": [
+            0, 
             1, 
             2, 
-            3, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ], 
         "price": 300, 
         "size": "3", 
         "southern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
-            8, 
-            9
+            8
         ]
     }, 
     "zebra_turkeyfish": {
@@ -3658,26 +3658,26 @@ var fish = {
         "location": "Sea", 
         "name": "Zebra turkeyfish", 
         "northern": [
+            3, 
             4, 
             5, 
             6, 
             7, 
             8, 
             9, 
-            10, 
-            11
+            10
         ], 
         "price": 500, 
         "size": "3", 
         "southern": [
+            0, 
             1, 
             2, 
             3, 
             4, 
-            5, 
+            9, 
             10, 
-            11, 
-            12
+            11
         ]
     }
 }
