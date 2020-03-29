@@ -1,11 +1,11 @@
 var settings = {
-  "hemisphere" : "northern",
-  "critter" : "fish",
-  "sort" : ["location","d"],
-  "caught" : [],
-  "hide_caught" : false,
-  "hide_time" : true,
-  "offset" : 0
+  "critter_hemisphere" : "northern",
+  "critter_type" : "fish",
+  "critter_sort" : ["location","d"],
+  "critter_caught" : [],
+  "critter_hide_caught" : false,
+  "critter_hide_time" : true,
+  "critter_time_offset" : 0
 };
 
 function readSetting(name) {
@@ -38,7 +38,7 @@ toggleButtons.forEach((btn) => {
   }
 });
 
-var region = readSetting("hemisphere");
+var region = readSetting("critter_hemisphere");
 var hemisphereSwitch = document.getElementById("hemisphere");
 //console.log(region);
 hemisphereSwitch.innerHTML = region;
@@ -50,23 +50,23 @@ function changeHemisphere() {
     region = "northern";
   }
   hemisphere.innerHTML = region;
-  writeSetting('hemisphere', region);
+  writeSetting('critter_hemisphere', region);
   buildList();
 }
 
-var critter = readSetting("critter");
+var critterType = readSetting("critter_type");
 var critterSwitch = document.getElementById("critter");
 //console.log(critter);
-critterSwitch.innerHTML = critter;
+critterSwitch.innerHTML = critterType;
 
 function changeCritterType() {
-  if (critter === "fish") {
-    critter = "bugs";
+  if (critterType === "fish") {
+    critterType = "bugs";
   } else {
-    critter = "fish";
+    critterType = "fish";
   }
-  critterSwitch.innerHTML = critter;
-  writeSetting('critter', critter);
+  critterSwitch.innerHTML = critterType;
+  writeSetting('critter_type', critterType);
   buildList();
 }
 
@@ -83,13 +83,19 @@ function setTime() {
   var newTime = document.getElementById("datetime").value;
   if (newTime == "") {return;}
   offset = Date.parse(newTime) - Date.now();
-  writeSetting("offset", offset);
+  writeSetting("critter_time_offset", offset);
   time();
-  buildList();
+}
+
+function resetTime() {
+  offset = 0;
+  writeSetting("critter_time_offset", offset);
+  time();
 }
 
 function showOffset() {
   var offsetForm = document.getElementById("offset");
+  document.getElementById("datetime").value = Date.now();
   offsetForm.classList.toggle('hidden');
 }
 
@@ -98,7 +104,7 @@ var clock = document.getElementById('clock');
 var month = 99;
 var hour = 99;
 var last_hour = 0;
-var offset = readSetting("offset");;
+var offset = readSetting("critter_time_offset");;
 
 function time() {
   var d = new Date();
@@ -115,7 +121,7 @@ time();
 setInterval(time, 1000);
 
 function filterCaught(filtered) {
-  var caught = readSetting("caught");
+  var caught = readSetting("critter_caught");
   var result = filtered.filter(function(critter) {
     return caught.indexOf(critter.id) === -1;
   });
@@ -140,15 +146,13 @@ function filterValue(filtered,key,value) {
 function buildList() {
   var tableHTML = '';
   var cols = {'fish': ['Name','Location','Size'], 'bugs':['Name','Location']}
-  var display = readSetting("critter");
-  for (var i in cols[display]) {
-    tableHTML += '<th id="' + cols[display][i] + '">' + cols[display][i] + '</th>'
+  for (var i in cols[critterType]) {
+    tableHTML += '<th id="' + cols[critterType][i] + '">' + cols[critterType][i] + '</th>'
   }
   tableHTML = '<thead><tr>' + tableHTML + '</tr></thead><tbody>'
-  var hideCaught = readSetting("hide_caught");
-  var hideTime = readSetting("hide_time");
-  var filtered = critters;
-  filtered = filterValue(filtered,'type',display);
+  var hideCaught = readSetting("critter_hide_caught");
+  var hideTime = readSetting("critter_hide_time");
+  var filtered = filterValue(critters,'type',critterType);
   if (hideCaught) {filtered = filterCaught(filtered);}
   if (hideTime) {filtered = filterTime(filtered);}
   
@@ -156,7 +160,7 @@ function buildList() {
     tableHTML += '<tr id="' + filtered[i].id + '" class="' + (isCaught(filtered[i].id) ? 'checked' : '') + '">';
     tableHTML += '<td>' + filtered[i].name + '</td>';
     tableHTML += '<td>' + filtered[i].location + '</td>';
-    if (display === "fish") {tableHTML += '<td>' + filtered[i].size + '</td>';}
+    if (critterType === "fish") {tableHTML += '<td>' + filtered[i].size + '</td>';}
     tableHTML += '</tr>';
   }
   document.getElementById("critterList").innerHTML = tableHTML+'<tbody>';
@@ -170,11 +174,14 @@ list.addEventListener('click', function(ev) {
     console.log(critter_id);
     buildList()
   }
-  //console.log(ev.target);
+  if (ev.target.tagName === 'TH') {
+    console.log(ev.target.id);
+    setSort(ev.target.id);
+  }
 }, false);
 
 function locateCaught(id) {
-	return readSetting("caught").indexOf(id);
+	return readSetting("critter_caught").indexOf(id);
 }
 
 function isCaught(id) {
@@ -182,12 +189,12 @@ function isCaught(id) {
 }
 
 function toggleCaught(id) {
-  var caught = readSetting("caught");
+  var caught = readSetting("critter_caught");
   if(isCaught(id)) {
     caught.splice(locateCaught(id),1);
   }
   else {
   	caught.push(id);
   }
-  writeSetting("caught", caught);
+  writeSetting("critter_caught", caught);
 }

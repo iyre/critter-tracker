@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=0.5">
 </head>
 <body>
 
 <div class='settings'>
-    <div id='hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
-    <div id='hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
+    <div id='critter_hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
+    <div id='critter_hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
     <div id='hemisphere' class='switchBtn' onclick='changeHemisphere()'>Hemisphere</div>
     <div id='critter' class='switchBtn' onclick='changeCritterType()'>Critter</div>
     <div id='clock' onclick='showOffset()'></div>
     <div id='offset' class='hidden'>
         <input type='datetime-local' id='datetime'>
         <button type='button' id='settime' onclick='setTime()'>Set</button>
+        <button type='button' id='resettime' onclick='resetTime()'>Reset</button>
     </div>
 </div>
 
 <table id="critterList"></table>
 
+<script src="critters.js?v=1"></script>
+<script src="script.js?v=0.5"></script>
 </body>
-<script src="critters.js"></script>
-<script src="script.js"></script>
 </html>
