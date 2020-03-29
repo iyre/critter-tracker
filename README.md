@@ -1,5 +1,5 @@
 # critter-tracker
-See which critters are currently appearing in your game, and keep track of those you've captured.
+See which critters are currently appearing in your game, and keep track of what you capture.
 
 https://iyre.github.io/critter-tracker/
 
@@ -8,6 +8,7 @@ https://iyre.github.io/critter-tracker/
 * Toggle buttons at the top to hide creatures that have been completed or aren't currently available. 
 * Switch between nothern/southern hemispheres and lists of fish/bugs. *These buttons display the current mode.*
 * Click the clock to set a custom date/time to match your game.
+* Change the theme by clicking the moon icon.
 * Sort the list using the column headers.
 
 ## To Do

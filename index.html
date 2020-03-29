@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="style.css?v=0.7">
-</head>
-<body>
-
-<div class='settings'>
-    <div id='critter_hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
-    <div id='critter_hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
-    <div id='hemisphere' class='switchBtn' onclick='changeHemisphere()'>Hemisphere</div>
-    <div id='critter' class='switchBtn' onclick='changeCritterType()'>Critter</div>
-    <div id='clock' onclick='showOffset()'></div>
-    <div id='offset' class='hidden'>
-        <input type='datetime-local' id='datetime'>
-        <button type='button' id='settime' onclick='setTime()'>Set</button>
-        <button type='button' id='resettime' onclick='resetTime()'>Reset</button>
-    </div>
-</div>
-
-<table id="critterList"></table>
-
-<script src="critters.js?v=1"></script>
-<script src="script.js?v=0.7"></script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" content="See which critters are currently appearing in your game, and keep track of what you capture.">
+        <title>Critter Tracker</title>
+        <link rel="stylesheet" href="style.css?v=0.7">
+        <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    <body data-theme="dark">
+        <div id='settings'>
+            <div id='critter_hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
+            <div id='critter_hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
+            <div id='hemisphere' class='switchBtn' onclick='changeHemisphere()'>Hemisphere</div>
+            <div id='critter' class='switchBtn' onclick='changeCritterType()'>Critter</div>
+            <div id='clock' onclick='showOffset()'></div>
+            <div id='theme' class='toggleBtn' onclick='changeTheme()'>🌗</div>
+            <div id='offset' class='hidden'>
+                <input type='datetime-local' id='datetime'>
+                <button type='button' id='settime' onclick='setTime()'>Set</button>
+                <button type='button' id='resettime' onclick='resetTime()'>Reset</button>
+            </div>
+        </div>
+        <table id="critterList"></table>
+        <footer><a href='https://github.com/iyre/critter-tracker'>source</a></footer>
+        <script src="critters.js?v=1"></script>
+        <script src="script.js?v=0.7"></script>
+    </body>
 </html>

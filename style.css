@@ -1,17 +1,59 @@
-/* Include the padding and border in an element's total width and height */
+:root {
+  --bg-color-1: #eee;
+  --bg-color-2: #ddd;
+  --bg-color-3: #aaa;
+  --bg-color-4: #555;
+  --bg-color-5: #333;
+
+  --fg-color-1: #000;
+  --fg-color-2: #999;
+  --fg-color-3: #fff;
+}
+
+[data-theme="dark"] {
+  --bg-color-1: #111;
+  --bg-color-2: #333;
+  --bg-color-3: #666;
+  --bg-color-4: #999;
+  --bg-color-5: #ccc;
+
+  --fg-color-1: #fff;
+  --fg-color-2: #777;
+  --fg-color-3: #000;
+}
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.0em;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 769px) {
+  * {
+    font-size: 1.05em;
+  }
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-color-1);
+  color: var(--fg-color-1);
+}
+
+#settings {
+  padding: 8px 4px 0px 8px;
 }
 
 .toggleBtn, .switchBtn, #clock {
+  line-height: 1em;
   display: inline-block;
   cursor: pointer;
-  margin: 10px 0 10px 10px;
+  margin: 0px 4px 8px 0px;
   cursor: pointer;
-  background: #eee;
-  font-size: 1.5em;
+  background: var(--bg-color-2);
+
   transition: 0.2s;
   padding: 10px;
 
@@ -26,8 +68,8 @@
   display:none;
 }
 .enabled {
-  background: #333; 
-  color: white; 
+  background: var(--bg-color-5); 
+  color: var(--fg-color-3); 
 }
 
 #offset * {
@@ -35,15 +77,13 @@
   padding: 10px;
 }
 
-
-/* Remove margins and padding from the list */
 table {
   margin: 0;
   padding: 0;
-  margin-top: 10px;
+  width: 100%; 
+  border-collapse: collapse; 
 }
 
-/* Style the list items */
 table tr {
   transition: 0.2s;
   cursor: pointer;
@@ -53,7 +93,6 @@ table tr {
   background: #eee;
   font-size: 1em;
 */
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -61,39 +100,30 @@ table tr {
 }
 
 table tr:hover {
-  background: #ddd;
+  background: var(--bg-color-4);
+  color: var(--fg-color-3);
+}
+
+td, th { 
+  padding: 10px; 
+  border: 1px solid var(--fg-color-2); 
+  text-align: left; 
+}
+
+table th {
+  background: var(--bg-color-5);
+  color: var(--fg-color-3); 
+  font-weight: bold; 
+}
+
+footer,a {
+  font-family:monospace;
+  color: var(--fg-color-2);
+  line-height:2em;
+  text-align: center;
 }
 
 .checked {
-  background: #888;
-  color: #fff;
-}
-
-.checked:hover {
-  background: #666;
-  color: #fff;
-}
-
-
-/* 
-Generic Styling, for Desktops/Laptops 
-*/
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-}
-/* Zebra striping 
-tr:nth-of-type(odd) { 
-  background: #eee; 
-}
-*/
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 10px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+  background: var(--bg-color-3);
+  color: var(--fg-color-1);
 }

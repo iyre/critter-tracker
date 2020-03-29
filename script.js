@@ -1,5 +1,6 @@
 var settings = {
   "critter_tracker_version" : "0.6",
+  "critter_tracker_theme" : "light",
   "critter_hemisphere" : "northern",
   "critter_type" : "fish",
   "critter_sort" : [["size","desc"],["location","desc"],["name","desc"]],
@@ -23,11 +24,12 @@ function writeSetting(name, content) {
   settings[name] = content;
 }
 
+document.getElementsByTagName("BODY")[0].setAttribute("data-theme",readSetting('critter_tracker_theme'));
+
 // initialize localstorage variables on first run
 function initStorage() {
   // reset settings only if version has changed (to avoid malfunctions due to old bugs)
   if (readSetting("critter_tracker_version") != settings["critter_tracker_version"]) {
-    console.log()
     for (var i in settings) {
       if (i === "critter_caught") {continue;} //don't overwrite caught critters
       localStorage.setItem(i, JSON.stringify(settings[i]));
@@ -262,4 +264,10 @@ function toggleCaught(id) {
   	caught.push(id);
   }
   writeSetting("critter_caught", caught);
+}
+
+function changeTheme() {
+  let themeSetting = readSetting('critter_tracker_theme') === 'dark' ? 'light' : 'dark';
+  writeSetting('critter_tracker_theme',themeSetting);
+  document.getElementsByTagName("BODY")[0].setAttribute("data-theme",themeSetting);
 }
