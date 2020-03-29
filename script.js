@@ -26,7 +26,8 @@ function writeSetting(name, content) {
 // initialize localstorage variables on first run
 function initStorage() {
   // reset settings only if version has changed (to avoid malfunctions due to old bugs)
-  if (localStorage.getItem("critter_tracker_version") != settings["critter_tracker_version"]) {
+  if (readSetting("critter_tracker_version") != settings["critter_tracker_version"]) {
+    console.log()
     for (var i in settings) {
       if (i === "critter_caught") {continue;} //don't overwrite caught critters
       localStorage.setItem(i, JSON.stringify(settings[i]));
