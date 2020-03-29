@@ -7,7 +7,8 @@ https://iyre.github.io/critter-tracker/
 * Click rows to mark as caught
 * Toggle buttons at the top to hide creatures that have been completed or aren't currently available. 
 * Switch between nothern/southern hemispheres and lists of fish/bugs. *These buttons display the current mode.*
-* Click the date to set a custom date/time to match your game.
+* Click the clock to set a custom date/time to match your game.
+* Sort the list using the column headers.
 
 ## To Do
 - [X] fish collection
