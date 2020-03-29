@@ -140,8 +140,6 @@ function filterValue(filtered,key,value) {
 function buildList() {
   var tableHTML = '';
   var cols = {'fish': ['Name','Location','Size'], 'bugs':['Name','Location']}
-  '<thead><tr></tr></thead><tbody>'
-  '<th scope="col" id="name">Name</th><th scope="col" id="location">Location</th><th scope="col" id="size">Size</th>'
   var display = readSetting("critter");
   for (var i in cols[display]) {
     tableHTML += '<th id="' + cols[display][i] + '">' + cols[display][i] + '</th>'
@@ -155,12 +153,11 @@ function buildList() {
   if (hideTime) {filtered = filterTime(filtered);}
   
   for (var i in filtered) {
-    tableHTML += 
-    '<tr id="' + filtered[i].id + '" class="' + (isCaught(filtered[i].id) ? 'checked' : '') + '">' + 
-    '<td>' + filtered[i].name + '</td>' + 
-    '<td>' + filtered[i].location + '</td>' + 
-    '<td>' + filtered[i].size + '</td>' + 
-    '</tr>';
+    tableHTML += '<tr id="' + filtered[i].id + '" class="' + (isCaught(filtered[i].id) ? 'checked' : '') + '">';
+    tableHTML += '<td>' + filtered[i].name + '</td>';
+    tableHTML += '<td>' + filtered[i].location + '</td>';
+    if (display === "fish") {tableHTML += '<td>' + filtered[i].size + '</td>';}
+    tableHTML += '</tr>';
   }
   document.getElementById("critterList").innerHTML = tableHTML+'<tbody>';
 }
