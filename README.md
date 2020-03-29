@@ -1,5 +1,5 @@
-# acnh-collection
-https://iyre.github.io/acnh-collection/
+# acnh-critter-tracker
+https://iyre.github.io/acnh-critter-tracker/
 
 Creature collections checklist for Animal Crossing: New Horizons
 
@@ -19,4 +19,5 @@ This project requires browser storage to remember preferences. It wont work prop
 - [X] hemisphere toggle
 - [X] bug collection
 - [ ] sorting
+- [ ] service worker
 - [ ] per-creature schedule
