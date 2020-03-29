@@ -9,9 +9,6 @@ https://iyre.github.io/critter-tracker/
 * Switch between nothern/southern hemispheres and lists of fish/bugs. *These buttons display the current mode.*
 * Click the date to set a custom date/time to match your game.
 
-## Notes
-This project requires browser storage to remember preferences. It wont work properly unless your browser is supported.
-
 ## To Do
 - [X] fish collection
 - [X] hide completed
@@ -19,6 +16,7 @@ This project requires browser storage to remember preferences. It wont work prop
 - [X] custom date offset
 - [X] hemisphere toggle
 - [X] bug collection
-- [ ] sorting
+- [X] sorting
+- [ ] look and feel
 - [ ] service worker
 - [ ] per-creature schedule
