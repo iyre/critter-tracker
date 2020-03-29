@@ -1,9 +1,10 @@
 var settings = {
-	"hemisphere" : "northern",
+  "hemisphere" : "northern",
+  "critter" : "fish",
   "sort" : ["location","d"],
   "caught" : [],
   "hide_caught" : false,
-  "hide_time" : false,
+  "hide_time" : true,
   "offset" : 0
 };
 
@@ -38,9 +39,9 @@ toggleButtons.forEach((btn) => {
 });
 
 var region = readSetting("hemisphere");
-var hemisphere = document.getElementById("hemisphere");
-console.log(region);
-hemisphere.innerHTML = region;
+var hemisphereSwitch = document.getElementById("hemisphere");
+//console.log(region);
+hemisphereSwitch.innerHTML = region;
 
 function changeHemisphere() {
   if (region === "northern") {
@@ -50,7 +51,23 @@ function changeHemisphere() {
   }
   hemisphere.innerHTML = region;
   writeSetting('hemisphere', region);
-  buildList(fish);
+  buildList();
+}
+
+var critter = readSetting("critter");
+var critterSwitch = document.getElementById("critter");
+//console.log(critter);
+critterSwitch.innerHTML = critter;
+
+function changeCritterType() {
+  if (critter === "fish") {
+    critter = "bugs";
+  } else {
+    critter = "fish";
+  }
+  critterSwitch.innerHTML = critter;
+  writeSetting('critter', critter);
+  buildList();
 }
 
 function toggleButton(event) {
@@ -59,19 +76,16 @@ function toggleButton(event) {
   hide = !hide;
   writeSetting(toggle_id, hide);
   event.target.classList.toggle('enabled');
-  buildList(fish);
+  buildList();
 }
 
 function setTime() {
   var newTime = document.getElementById("datetime").value;
-  //console.log(newTime);
   if (newTime == "") {return;}
-  //console.log(Date.now());
-  //console.log(Date.parse(newTime));
   offset = Date.parse(newTime) - Date.now();
   writeSetting("offset", offset);
   time();
-  buildList(fish);
+  buildList();
 }
 
 function showOffset() {
@@ -81,8 +95,8 @@ function showOffset() {
 
 var clock = document.getElementById('clock');
 
-var month = 0;
-var hour = 0;
+var month = 99;
+var hour = 99;
 var last_hour = 0;
 var offset = readSetting("offset");;
 
@@ -93,59 +107,71 @@ function time() {
   var m = d.getMinutes();
   hour = d.getHours();
   month = d.getMonth();
-  //console.log(month);
-
-  if (last_hour != hour) {buildList(fish);}
+  if (last_hour != hour) {buildList();}
   last_hour = hour;
   clock.textContent = d.toLocaleString();
 }
 time();
 setInterval(time, 1000);
 
-
-function buildList(data) {    
-  //document.write('<table>');
-  var tableHTML = '<thead><tr><th scope="col" id="name">Name</th><th scope="col" id="location">Location</th><th scope="col" id="size">Size</th></tr></thead><tbody>';
-  var hideCaught = readSetting("hide_caught");
-  var hideTime = readSetting("hide_time");
-  for (var i in data) {
-    //console.log(isCaught(i));
-    //console.log(settings['hide']);
-    var months = data[i][region];
-    var hours = data[i].hours;
-    //console.log(hideCaught && (!months.includes(month) || !hours.includes(hour)));
-		if (isCaught(i) && hideCaught) {
-      //console.log('hide: ' + i);
-      continue
-    }
-    
-    else if (hideTime && (!months.includes(month) || !hours.includes(hour))) {
-      //console.log('not available');
-    }
-    else {
-      //console.log('available')
-      tableHTML += 
-      '<tr id="' + i + '" class="' + (isCaught(i) ? 'checked' : '') + '">' + 
-      '<td>' + data[i].name + '</td>' + 
-      '<td>' + data[i].location + '</td>' + 
-      '<td>' + data[i].size + '</td>' + 
-      '</tr>';
-    }
-  }
-  document.getElementById("fishList").innerHTML = tableHTML+'<tbody>';
+function filterCaught(filtered) {
+  var caught = readSetting("caught");
+  var result = filtered.filter(function(critter) {
+    return caught.indexOf(critter.id) === -1;
+  });
+  return result;
 }
 
-buildList(fish);
+function filterTime(filtered) {
+  var result = filtered.filter(function(critter) {
+    console.log(critter.months)
+    return critter.hours.includes(hour) && critter[region].includes(month);
+  });
+  return result;
+}
 
+function filterValue(filtered,key,value) {
+  var result = filtered.filter(function(critter) {
+    return value === critter[key];
+  });
+  return result;
+}
+
+function buildList() {
+  var tableHTML = '';
+  var cols = {'fish': ['Name','Location','Size'], 'bugs':['Name','Location']}
+  '<thead><tr></tr></thead><tbody>'
+  '<th scope="col" id="name">Name</th><th scope="col" id="location">Location</th><th scope="col" id="size">Size</th>'
+  var display = readSetting("critter");
+  for (var i in cols[display]) {
+    tableHTML += '<th id="' + cols[display][i] + '">' + cols[display][i] + '</th>'
+  }
+  tableHTML = '<thead><tr>' + tableHTML + '</tr></thead><tbody>'
+  var hideCaught = readSetting("hide_caught");
+  var hideTime = readSetting("hide_time");
+  var filtered = critters;
+  filtered = filterValue(filtered,'type',display);
+  if (hideCaught) {filtered = filterCaught(filtered);}
+  if (hideTime) {filtered = filterTime(filtered);}
+  
+  for (var i in filtered) {
+    tableHTML += 
+    '<tr id="' + filtered[i].id + '" class="' + (isCaught(filtered[i].id) ? 'checked' : '') + '">' + 
+    '<td>' + filtered[i].name + '</td>' + 
+    '<td>' + filtered[i].location + '</td>' + 
+    '<td>' + filtered[i].size + '</td>' + 
+    '</tr>';
+  }
+  document.getElementById("critterList").innerHTML = tableHTML+'<tbody>';
+}
 
 var list = document.querySelector('table');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'TD') {
-  	var fishid = ev.target.parentNode.id;
-    toggleCaught(fishid);
-    console.log(fishid);
-    //console.log(caught.fish)
-    buildList(fish)
+  	var critter_id = ev.target.parentNode.id;
+    toggleCaught(critter_id);
+    console.log(critter_id);
+    buildList()
   }
   //console.log(ev.target);
 }, false);

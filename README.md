@@ -14,7 +14,7 @@ This project requires browser storage to remember preferences. It wont work prop
 - [X] hide completed
 - [X] hide out-of-season
 - [X] custom date offset
-- [ ] hemisphere toggle
-- [ ] bug collection
+- [X] hemisphere toggle
+- [X] bug collection
 - [ ] sorting
 - [ ] per-creature schedule
