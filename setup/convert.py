@@ -1,65 +1,103 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+
 import json
 import csv
+import re
+import datetime
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+from lxml import html
 
 
-infile='fish_north_time.txt'
-outfile='fish.json'
-data = {}
+fish_url = 'https://animalcrossing.fandom.com/wiki/Fish_(New_Horizons)'
+bugs_url = 'https://animalcrossing.fandom.com/wiki/Bugs_(New_Horizons)'
+out_file='critters.json'
+data = []
 
-def add_creature(entry,index):
-    id1 = entry[0].lower().replace(' ','_')
+def get_table(url):
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, features="lxml")
+    tbl = soup.find_all('table')
+    for table in tbl:
+        df = pd.read_html(str(table))[0]
+        if df.shape[0] == 80:
+            return df
+    raise Exception("Didn't find any tables with a length of 80.")
+
+def add_critter(critter_type,critter,index):
+    critter_id = critter['Name'].lower().replace(' ','_')
+    months_north = parse_months(critter)
+    months_south = convert_months(months_north)
+    hours = parse_hours(critter['Time'])
+    entry = {}
+    entry['id'] = critter_id
+    entry['index'] = index
+    entry['type'] = critter_type
+    entry['name'] = critter['Name']
+    entry['image'] = ''
+    entry['price'] = critter['Price']
+    entry['location'] = critter['Location']
+    entry['size'] = critter['Shadow size'] if critter_type == 'fish' else ''
+    entry['hours'] = hours
+    entry['northern'] = months_north
+    entry['southern'] = months_south
+    data.append(entry)
+
+def parse_months(critter):
     months = []
     month_index = 0
-    for a in entry[7:]:
-        if int(a) == 1:
+    for month in critter['Jan':]:
+        if month == '✓':
             months.append(month_index)
         month_index += 1
-
-    hours = []
-    hour = int(entry[5])
-    stop = int(entry[6])
-    while hour != stop:
-        if hour == 24:
-            hour = 0
-        print('hour', hour)
-        print('stop', stop)
-        hours.append(hour)
-        hour += 1
-    print(entry[0])
-    print(months)
-    print(hours)
-    hours.sort()
     months.sort()
-    data[id1] = {
-        'index': index,
-        'name': entry[0],
-        'image': '',
-        'price': int(entry[2]),
-        'location': entry[3],
-        'size': entry[4],
-        'hours': hours,
-        'northern': months,
-        'southern': []
-    }
+    return months
 
-#with open(outfile) as f:
-#    data = json.load(f)
+def convert_months(months_north):
+    months_south = []
+    for month in months_north:
+        #need months from 0-index, but datetime expects 1-indexed
+        date = datetime.datetime(1900,month+1,1) + datetime.timedelta(days=32*6)
+        months_south.append(date.month-1)
+    months_south.sort()
+    return months_south
 
-with open(infile) as f:
-    reader = csv.reader(f, delimiter='\t')
-    index = 0
-    for row in reader:
-        if index==0:
-            index+=1
-            continue
-        #print(row)
-        add_creature(row,index)
-        index+=1
+def parse_hours(hour_str):
+    hours = []
+    if hour_str == 'All day':
+        hours = [*range(0,24)]
+    else:
+        parsed = re.findall(r'\d+ [A-Z]+',hour_str)
+        parsed_hours = []
+        for hour in parsed:
+            time = datetime.datetime.strptime(hour, '%I %p')
+            parsed_hours.append(time.hour)
+        for i in range(len(parsed_hours)):
+            if i % 2 == 0:
+                hours += list_hours(parsed_hours[i],parsed_hours[i+1])
+    hours.sort()
+    return hours
+
+def list_hours(start, end):
+    hours = []
+    hour = start
+    while hour != end:
+        hours.append(hour)
+        hour = (hour+1) if (hour < 23) else 0
+    return hours
+
+def ingest(critter_type):
+    url = bugs_url if critter_type == 'bugs' else fish_url
+    df = get_table(url)
+    for index,critter in df.iterrows():
+        add_critter(critter_type,critter,index)
 
 def write_file():
-    with open(outfile, 'w') as f:
+    with open(out_file, 'w') as f:
         json.dump(data, f, indent=4, sort_keys=True)
 
-#print(json.dumps(data,indent=4))
-
+ingest('fish')
+ingest('bugs')
 write_file()
