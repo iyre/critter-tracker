@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Critter Tracker</title>
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="style.css" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="Description" content="See which critters are currently appearing in your game, and keep track of what you capture." />
-        <title>Critter Tracker</title>
-        <link rel="manifest" href="/manifest.json?v=0.7.5" />
-        <link rel="stylesheet" href="/style.css?v=0.7.5" />
-        <link rel="icon" type="image/png" href="/images/icon-256.png" />
+        <meta name="Description" content="See which critters are currently appearing in your game, and keep track of what you catch." />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
     </head>
-    <body data-theme="dark">
+    <body>
         <div id='settings'>
             <div id='critter_hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
             <div id='critter_hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
@@ -25,7 +25,7 @@
         </div>
         <table id="critterList"></table>
         <footer><a href='https://github.com/iyre/critter-tracker'>source</a></footer>
-        <script src="/critters.js?v=1"></script>
-        <script src="/script.js?v=0.7.5"></script>
+        <script src="critters.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

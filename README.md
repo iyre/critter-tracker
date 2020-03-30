@@ -1,5 +1,5 @@
 # critter-tracker
-See which critters are currently appearing in your game, and keep track of what you capture.
+See which critters are currently appearing in your game, and keep track of what you catch.
 
 https://iyre.github.io/critter-tracker/
 
@@ -19,6 +19,6 @@ https://iyre.github.io/critter-tracker/
 - [X] hemisphere toggle
 - [X] bug collection
 - [X] sorting
+- [X] service worker
 - [ ] look and feel
-- [ ] service worker
 - [ ] per-creature schedule

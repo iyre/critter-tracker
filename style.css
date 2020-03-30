@@ -46,6 +46,13 @@ body {
   padding: 8px 4px 0px 8px;
 }
 
+.banner {
+  align-content: center;
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+
 .toggleBtn, .switchBtn, #clock {
   line-height: 1em;
   display: inline-block;

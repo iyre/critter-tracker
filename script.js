@@ -1,5 +1,5 @@
 var settings = {
-  "critter_tracker_version" : "0.6",
+  "critter_tracker_version" : "v0.8",
   "critter_tracker_theme" : "light",
   "critter_hemisphere" : "northern",
   "critter_type" : "fish",
@@ -9,6 +9,12 @@ var settings = {
   "critter_hide_time" : true,
   "critter_time_offset" : 0
 };
+
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/critter-tracker/sw.js')
+    .then(reg => console.log('service worker registered'))
+    .catch(err => console.log('service worker not registered', err));
+}
 
 function readSetting(name) {
   var result = JSON.parse(localStorage.getItem(name));
@@ -23,8 +29,6 @@ function writeSetting(name, content) {
   localStorage.setItem(name, valueString);
   settings[name] = content;
 }
-
-document.getElementsByTagName("BODY")[0].setAttribute("data-theme",readSetting('critter_tracker_theme'));
 
 // initialize localstorage variables on first run
 function initStorage() {
@@ -44,6 +48,9 @@ function initStorage() {
 }
 
 initStorage();
+
+//apply color theme to match setting
+document.getElementsByTagName("BODY")[0].setAttribute("data-theme",readSetting('critter_tracker_theme'));
 
 //init toggle buttons
 var toggleButtons = document.querySelectorAll('.toggleBtn');
