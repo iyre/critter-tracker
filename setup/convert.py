@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
+import argparse
 import json
 import csv
 import re
@@ -13,7 +14,7 @@ from lxml import html
 
 fish_url = 'https://animalcrossing.fandom.com/wiki/Fish_(New_Horizons)'
 bugs_url = 'https://animalcrossing.fandom.com/wiki/Bugs_(New_Horizons)'
-out_file='critters.json'
+out_file = 'critters.json'
 data = []
 
 def get_table(url):
@@ -88,9 +89,20 @@ def list_hours(start, end):
         hour = (hour+1) if (hour < 23) else 0
     return hours
 
-def ingest(critter_type):
+def process(critter_type,action='direct'):
     url = bugs_url if critter_type == 'bugs' else fish_url
-    df = get_table(url)
+    df = None
+    if action == 'from_csv':
+        df = pd.read_csv(critter_type + '.csv')
+    else:
+        url = bugs_url if critter_type == 'bugs' else fish_url
+        df = get_table(url)
+    if action == 'to_csv':
+        df.to_csv(critter_type + '.csv', index=False)
+        return
+    incorporate(critter_type,df)
+
+def incorporate(critter_type,df):
     for index,critter in df.iterrows():
         add_critter(critter_type,critter,index)
 
@@ -98,6 +110,22 @@ def write_file():
     with open(out_file, 'w') as f:
         json.dump(data, f, indent=4, sort_keys=True)
 
-ingest('fish')
-ingest('bugs')
-write_file()
+def main():
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument("--write", help="write results to csv", action="store_true")
+    arg_parser.add_argument("--read", help="read input from csv", action="store_true")
+    args = arg_parser.parse_args()
+
+    if args.write:
+        process('fish','to_csv')
+        process('bugs','to_csv')
+        return
+    elif args.read:
+        process('fish','from_csv')
+        process('bugs','from_csv')
+    else:
+        process('fish')
+        process('bugs')
+    write_file()
+
+main()

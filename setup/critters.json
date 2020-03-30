@@ -1665,7 +1665,7 @@
             8
         ],
         "price": 1500,
-        "size": "2",
+        "size": "1",
         "southern": [
             0,
             1,
@@ -3632,7 +3632,7 @@
             8
         ],
         "price": 1500,
-        "size": "? (Fin)",
+        "size": "6 (Fin)",
         "southern": [
             0,
             1,
@@ -4007,7 +4007,7 @@
         "id": "peacock_butterfly",
         "image": "",
         "index": 3,
-        "location": "Flying by rare flowers",
+        "location": "Flying by hybrid flowers",
         "name": "Peacock butterfly",
         "northern": [
             2,
@@ -4416,7 +4416,7 @@
         "id": "atlas_moth",
         "image": "",
         "index": 13,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Atlas moth",
         "northern": [
             3,
@@ -4491,7 +4491,7 @@
         "id": "long_locust",
         "image": "",
         "index": 15,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Long locust",
         "northern": [
             3,
@@ -4534,7 +4534,7 @@
         "id": "migratory_locust",
         "image": "",
         "index": 16,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Migratory locust",
         "northern": [
             7,
@@ -4569,7 +4569,7 @@
         "id": "rice_grasshopper",
         "image": "",
         "index": 17,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Rice grasshopper",
         "northern": [
             7,
@@ -4602,7 +4602,7 @@
         "id": "grasshopper",
         "image": "",
         "index": 18,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Grasshopper",
         "northern": [
             6,
@@ -4639,7 +4639,7 @@
         "id": "cricket",
         "image": "",
         "index": 19,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Cricket",
         "northern": [
             8,
@@ -4676,7 +4676,7 @@
         "id": "bell_cricket",
         "image": "",
         "index": 20,
-        "location": "Hopping",
+        "location": "On ground",
         "name": "Bell cricket",
         "northern": [
             8,
@@ -4705,7 +4705,7 @@
         "id": "mantis",
         "image": "",
         "index": 21,
-        "location": "On Flowers",
+        "location": "On flowers",
         "name": "Mantis",
         "northern": [
             2,
@@ -4841,7 +4841,7 @@
         "id": "wasp",
         "image": "",
         "index": 24,
-        "location": "Shake tree",
+        "location": "Shaking trees",
         "name": "Wasp",
         "northern": [
             0,
@@ -4890,8 +4890,8 @@
         "id": "brown_cicada",
         "image": "",
         "index": 25,
-        "location": "On Trees",
-        "name": "Brown Cicada",
+        "location": "On trees",
+        "name": "Brown cicada",
         "northern": [
             6,
             7
@@ -4919,8 +4919,8 @@
         "id": "robust_cicada",
         "image": "",
         "index": 26,
-        "location": "On Trees",
-        "name": "Robust Cicada",
+        "location": "On trees",
+        "name": "Robust cicada",
         "northern": [
             6,
             7
@@ -4948,8 +4948,8 @@
         "id": "giant_cicada",
         "image": "",
         "index": 27,
-        "location": "On Trees",
-        "name": "Giant Cicada",
+        "location": "On trees",
+        "name": "Giant cicada",
         "northern": [
             6,
             7
@@ -4977,7 +4977,7 @@
         "id": "walker_cicada",
         "image": "",
         "index": 28,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Walker cicada",
         "northern": [
             7,
@@ -5004,8 +5004,8 @@
         "id": "evening_cicada",
         "image": "",
         "index": 29,
-        "location": "On Trees",
-        "name": "Evening Cicada",
+        "location": "On trees",
+        "name": "Evening cicada",
         "northern": [
             6,
             7
@@ -5048,7 +5048,7 @@
         "id": "cicada_shell",
         "image": "",
         "index": 30,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Cicada shell",
         "northern": [
             6,
@@ -5207,7 +5207,7 @@
             10,
             11
         ],
-        "price": "?",
+        "price": "500",
         "size": "",
         "southern": [
             4,
@@ -5274,7 +5274,7 @@
         "id": "mole_cricket",
         "image": "",
         "index": 36,
-        "location": "Underground",
+        "location": "Digging ground (Follow sound)",
         "name": "Mole cricket",
         "northern": [
             0,
@@ -5315,7 +5315,7 @@
         "id": "pondskater",
         "image": "",
         "index": 37,
-        "location": "On Ponds and Rivers",
+        "location": "On ponds and rivers",
         "name": "Pondskater",
         "northern": [
             4,
@@ -5352,7 +5352,7 @@
         "id": "diving_beetle",
         "image": "",
         "index": 38,
-        "location": "On Ponds and Rivers",
+        "location": "On ponds and rivers",
         "name": "Diving beetle",
         "northern": [
             4,
@@ -5391,7 +5391,7 @@
         "id": "giant_water_bug",
         "image": "",
         "index": 39,
-        "location": "On Ponds and Rivers",
+        "location": "On ponds and rivers",
         "name": "Giant water bug",
         "northern": [
             3,
@@ -5579,7 +5579,7 @@
         "id": "tiger_beetle",
         "image": "",
         "index": 43,
-        "location": "On the ground",
+        "location": "On ground",
         "name": "Tiger beetle",
         "northern": [
             1,
@@ -5637,7 +5637,7 @@
         "id": "jewel_beetle",
         "image": "",
         "index": 44,
-        "location": "On Tree Stumps",
+        "location": "On tree stumps",
         "name": "Jewel beetle",
         "northern": [
             3,
@@ -5687,7 +5687,7 @@
         "id": "violin_beetle",
         "image": "",
         "index": 45,
-        "location": "On a tree stump",
+        "location": "On tree stumps",
         "name": "Violin beetle",
         "northern": [
             4,
@@ -5737,8 +5737,8 @@
         "id": "citrus_long-horned_beetle",
         "image": "",
         "index": 46,
-        "location": "On a tree stump",
-        "name": "Citrus Long-horned Beetle",
+        "location": "On tree stumps",
+        "name": "Citrus long-horned beetle",
         "northern": [
             0,
             1,
@@ -5801,7 +5801,7 @@
         "id": "rosalia_batesi_beetle",
         "image": "",
         "index": 47,
-        "location": "On a tree stump",
+        "location": "On tree stumps",
         "name": "Rosalia batesi beetle",
         "northern": [
             4,
@@ -5851,13 +5851,13 @@
         "id": "blue_weevil_beetle",
         "image": "",
         "index": 48,
-        "location": "On Tree (coconut?)",
+        "location": "On trees (Coconut?)",
         "name": "Blue weevil beetle",
         "northern": [
             6,
             7
         ],
-        "price": "?",
+        "price": "800",
         "size": "",
         "southern": [
             0,
@@ -5902,7 +5902,7 @@
             1,
             11
         ],
-        "price": "?",
+        "price": "3000",
         "size": "",
         "southern": [
             5,
@@ -5941,8 +5941,8 @@
         "id": "earth-boring_dung_beetle",
         "image": "",
         "index": 50,
-        "location": "On Ground",
-        "name": "Earth-boring Dung Beetle",
+        "location": "On ground",
+        "name": "Earth-boring dung beetle",
         "northern": [
             6,
             7,
@@ -5972,13 +5972,13 @@
         "id": "scarab_beetle",
         "image": "",
         "index": 51,
-        "location": "On Tree",
+        "location": "On trees",
         "name": "Scarab beetle",
         "northern": [
             6,
             7
         ],
-        "price": "?",
+        "price": "10000",
         "size": "",
         "southern": [
             0,
@@ -6016,7 +6016,7 @@
         "id": "drone_beetle",
         "image": "",
         "index": 52,
-        "location": "On Tree",
+        "location": "On trees",
         "name": "Drone beetle",
         "northern": [
             5,
@@ -6053,7 +6053,7 @@
         "id": "goliath_beetle",
         "image": "",
         "index": 53,
-        "location": "On Tree (Palm)",
+        "location": "On trees (Coconut)",
         "name": "Goliath beetle",
         "northern": [
             5,
@@ -6101,13 +6101,13 @@
         "id": "saw_stag",
         "image": "",
         "index": 54,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Saw stag",
         "northern": [
             6,
             7
         ],
-        "price": "?",
+        "price": "2000",
         "size": "",
         "southern": [
             0,
@@ -6145,7 +6145,7 @@
         "id": "miyama_stag",
         "image": "",
         "index": 55,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Miyama stag",
         "northern": [
             6,
@@ -6174,7 +6174,7 @@
         "id": "giant_stag",
         "image": "",
         "index": 56,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Giant stag",
         "northern": [
             6,
@@ -6207,7 +6207,7 @@
         "id": "rainbow_stag",
         "image": "",
         "index": 57,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Rainbow stag",
         "northern": [
             5,
@@ -6246,7 +6246,7 @@
         "id": "cyclommatus_stag",
         "image": "",
         "index": 58,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Cyclommatus stag",
         "northern": [
             6,
@@ -6281,7 +6281,7 @@
         "id": "golden_stag",
         "image": "",
         "index": 59,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Golden stag",
         "northern": [
             6,
@@ -6316,7 +6316,7 @@
         "id": "giraffe_stag",
         "image": "",
         "index": 60,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Giraffe stag",
         "northern": [
             6,
@@ -6351,7 +6351,7 @@
         "id": "horned_dynastid",
         "image": "",
         "index": 61,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Horned dynastid",
         "northern": [
             6,
@@ -6386,7 +6386,7 @@
         "id": "horned_atlas",
         "image": "",
         "index": 62,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Horned atlas",
         "northern": [
             6,
@@ -6421,7 +6421,7 @@
         "id": "horned_elephant",
         "image": "",
         "index": 63,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Horned elephant",
         "northern": [
             6,
@@ -6456,7 +6456,7 @@
         "id": "horned_hercules",
         "image": "",
         "index": 64,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Horned hercules",
         "northern": [
             6,
@@ -6482,7 +6482,7 @@
         "id": "walking_stick",
         "image": "",
         "index": 65,
-        "location": "On Trees",
+        "location": "On trees",
         "name": "Walking stick",
         "northern": [
             6,
@@ -6491,7 +6491,7 @@
             9,
             10
         ],
-        "price": "?",
+        "price": "600",
         "size": "",
         "southern": [
             0,
@@ -6532,7 +6532,7 @@
         "id": "walking_leaf",
         "image": "",
         "index": 66,
-        "location": "Under Trees Disguised as Leafs",
+        "location": "Under trees, disguised as leaves",
         "name": "Walking leaf",
         "northern": [
             6,
@@ -6578,7 +6578,7 @@
         "id": "bagworm",
         "image": "",
         "index": 67,
-        "location": "Shaking tree",
+        "location": "Shaking trees",
         "name": "Bagworm",
         "northern": [
             0,
@@ -6658,7 +6658,7 @@
             10,
             11
         ],
-        "price": "?",
+        "price": "80",
         "size": "",
         "southern": [
             0,
@@ -6798,7 +6798,7 @@
         "id": "fly",
         "image": "",
         "index": 71,
-        "location": "On trash items",
+        "location": "On rotten food",
         "name": "Fly",
         "northern": [
             0,
@@ -6897,7 +6897,7 @@
         "id": "flea",
         "image": "",
         "index": 73,
-        "location": "Villager's Heads",
+        "location": "On Villager's heads",
         "name": "Flea",
         "northern": [
             3,
@@ -6909,7 +6909,7 @@
             9,
             10
         ],
-        "price": "?",
+        "price": "70",
         "size": "",
         "southern": [
             0,
@@ -6953,7 +6953,7 @@
         "id": "snail",
         "image": "",
         "index": 74,
-        "location": "On rocks (Rain)",
+        "location": "On rocks (Raining)",
         "name": "Snail",
         "northern": [
             0,
@@ -7010,7 +7010,7 @@
         "id": "pill_bug",
         "image": "",
         "index": 75,
-        "location": "Hit a rock",
+        "location": "Hitting rocks",
         "name": "Pill bug",
         "northern": [
             0,
@@ -7053,7 +7053,7 @@
         "id": "centipede",
         "image": "",
         "index": 76,
-        "location": "Hit a rock",
+        "location": "Hitting rocks",
         "name": "Centipede",
         "northern": [
             0,
@@ -7102,7 +7102,7 @@
         "id": "spider",
         "image": "",
         "index": 77,
-        "location": "Shaking tree",
+        "location": "Shaking trees",
         "name": "Spider",
         "northern": [
             0,
@@ -7151,7 +7151,7 @@
         "id": "tarantula",
         "image": "",
         "index": 78,
-        "location": "On the ground",
+        "location": "On ground",
         "name": "Tarantula",
         "northern": [
             0,
@@ -7188,7 +7188,7 @@
         "id": "scorpion",
         "image": "",
         "index": 79,
-        "location": "On the ground",
+        "location": "On ground",
         "name": "Scorpion",
         "northern": [
             4,
