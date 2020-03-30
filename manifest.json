@@ -6,7 +6,11 @@
         "src": "images/icon-256.png",
         "sizes": "256x256",
         "type": "image/png",
-        "pourpose": "any maskable"
+        "purpose": "maskable"
+    },{
+        "src": "images/fox-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
     }],
     "start_url": "/critter-tracker/index.html",
     "display": "standalone",
