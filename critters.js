@@ -59,7 +59,7 @@ var critters = [
             14,
             15
         ],
-        "id": "pale_chub",
+        "id": "palechub",
         "image": "",
         "index": 1,
         "location": "River",
@@ -123,7 +123,7 @@ var critters = [
             22,
             23
         ],
-        "id": "crucian_carp",
+        "id": "cruciancarp",
         "image": "",
         "index": 2,
         "location": "River",
@@ -412,7 +412,7 @@ var critters = [
             14,
             15
         ],
-        "id": "pop-eyed_goldfish",
+        "id": "popeyedgoldfish",
         "image": "",
         "index": 7,
         "location": "Pond",
@@ -459,7 +459,7 @@ var critters = [
             14,
             15
         ],
-        "id": "ranchu_goldfish",
+        "id": "ranchugoldfish",
         "image": "",
         "index": 8,
         "location": "Pond",
@@ -618,7 +618,7 @@ var critters = [
             22,
             23
         ],
-        "id": "soft-shelled_turtle",
+        "id": "softshelledturtle",
         "image": "",
         "index": 11,
         "location": "River",
@@ -645,11 +645,11 @@ var critters = [
             22,
             23
         ],
-        "id": "snapping_turtle",
+        "id": "snappingturtle",
         "image": "",
         "index": 12,
         "location": "River",
-        "name": "Snapping turtle",
+        "name": "Snapping Turtle",
         "northern": [
             3,
             4,
@@ -790,7 +790,7 @@ var critters = [
             22,
             23
         ],
-        "id": "freshwater_goby",
+        "id": "freshwatergoby",
         "image": "",
         "index": 15,
         "location": "River",
@@ -928,7 +928,7 @@ var critters = [
             14,
             15
         ],
-        "id": "giant_snakehead",
+        "id": "giantsnakehead",
         "image": "",
         "index": 18,
         "location": "Pond",
@@ -1021,7 +1021,7 @@ var critters = [
             22,
             23
         ],
-        "id": "yellow_perch",
+        "id": "yellowperch",
         "image": "",
         "index": 20,
         "location": "River",
@@ -1073,7 +1073,7 @@ var critters = [
             22,
             23
         ],
-        "id": "black_bass",
+        "id": "blackbass",
         "image": "",
         "index": 21,
         "location": "River",
@@ -1235,7 +1235,7 @@ var critters = [
             22,
             23
         ],
-        "id": "pond_smelt",
+        "id": "pondsmelt",
         "image": "",
         "index": 24,
         "location": "River",
@@ -1320,7 +1320,7 @@ var critters = [
             22,
             23
         ],
-        "id": "cherry_salmon",
+        "id": "cherrysalmon",
         "image": "",
         "index": 26,
         "location": "River (Clifftop) Pond",
@@ -1414,7 +1414,7 @@ var critters = [
             22,
             23
         ],
-        "id": "golden_trout",
+        "id": "goldentrout",
         "image": "",
         "index": 28,
         "location": "River (Clifftop)",
@@ -1549,7 +1549,7 @@ var critters = [
             22,
             23
         ],
-        "id": "king_salmon",
+        "id": "kingsalmon",
         "image": "",
         "index": 31,
         "location": "River (Mouth)",
@@ -1584,7 +1584,7 @@ var critters = [
             22,
             23
         ],
-        "id": "mitten_crab",
+        "id": "mittencrab",
         "image": "",
         "index": 32,
         "location": "River",
@@ -1652,7 +1652,7 @@ var critters = [
             14,
             15
         ],
-        "id": "nibble_fish",
+        "id": "nibblefish",
         "image": "",
         "index": 34,
         "location": "River",
@@ -1765,7 +1765,7 @@ var critters = [
             14,
             15
         ],
-        "id": "neon_tetra",
+        "id": "neontetra",
         "image": "",
         "index": 37,
         "location": "River",
@@ -2041,7 +2041,7 @@ var critters = [
             22,
             23
         ],
-        "id": "saddled_bichir",
+        "id": "saddledbichir",
         "image": "",
         "index": 44,
         "location": "River",
@@ -2143,7 +2143,7 @@ var critters = [
             22,
             23
         ],
-        "id": "sea_butterfly",
+        "id": "seabutterfly",
         "image": "",
         "index": 46,
         "location": "Sea",
@@ -2191,7 +2191,7 @@ var critters = [
             22,
             23
         ],
-        "id": "sea_horse",
+        "id": "seahorse",
         "image": "",
         "index": 47,
         "location": "Sea",
@@ -2247,7 +2247,7 @@ var critters = [
             22,
             23
         ],
-        "id": "clown_fish",
+        "id": "clownfish",
         "image": "",
         "index": 48,
         "location": "Sea",
@@ -2351,7 +2351,7 @@ var critters = [
             22,
             23
         ],
-        "id": "butterfly_fish",
+        "id": "butterflyfish",
         "image": "",
         "index": 50,
         "location": "Sea",
@@ -2440,7 +2440,7 @@ var critters = [
             22,
             23
         ],
-        "id": "zebra_turkeyfish",
+        "id": "zebraturkeyfish",
         "image": "",
         "index": 52,
         "location": "Sea",
@@ -2530,7 +2530,7 @@ var critters = [
             22,
             23
         ],
-        "id": "puffer_fish",
+        "id": "pufferfish",
         "image": "",
         "index": 54,
         "location": "Sea",
@@ -2633,7 +2633,7 @@ var critters = [
             22,
             23
         ],
-        "id": "horse_mackerel",
+        "id": "horsemackerel",
         "image": "",
         "index": 56,
         "location": "Sea",
@@ -2697,7 +2697,7 @@ var critters = [
             22,
             23
         ],
-        "id": "barred_knifejaw",
+        "id": "barredknifejaw",
         "image": "",
         "index": 57,
         "location": "Sea",
@@ -2755,7 +2755,7 @@ var critters = [
             22,
             23
         ],
-        "id": "sea_bass",
+        "id": "seabass",
         "image": "",
         "index": 58,
         "location": "Sea",
@@ -2819,7 +2819,7 @@ var critters = [
             22,
             23
         ],
-        "id": "red_snapper",
+        "id": "redsnapper",
         "image": "",
         "index": 59,
         "location": "Sea",
@@ -2937,7 +2937,7 @@ var critters = [
             22,
             23
         ],
-        "id": "olive_flounder",
+        "id": "oliveflounder",
         "image": "",
         "index": 61,
         "location": "Sea",
@@ -3059,7 +3059,7 @@ var critters = [
             22,
             23
         ],
-        "id": "moray_eel",
+        "id": "morayeel",
         "image": "",
         "index": 63,
         "location": "Sea",
@@ -3105,7 +3105,7 @@ var critters = [
             22,
             23
         ],
-        "id": "ribbon_eel",
+        "id": "ribboneel",
         "image": "",
         "index": 64,
         "location": "Sea",
@@ -3207,7 +3207,7 @@ var critters = [
             22,
             23
         ],
-        "id": "blue_marlin",
+        "id": "bluemarlin",
         "image": "",
         "index": 66,
         "location": "Pier",
@@ -3265,7 +3265,7 @@ var critters = [
             22,
             23
         ],
-        "id": "giant_trevally",
+        "id": "gianttrevally",
         "image": "",
         "index": 67,
         "location": "Pier",
@@ -3317,7 +3317,7 @@ var critters = [
             22,
             23
         ],
-        "id": "mahi-mahi",
+        "id": "mahimahi",
         "image": "",
         "index": 68,
         "location": "Pier",
@@ -3362,7 +3362,7 @@ var critters = [
             19,
             20
         ],
-        "id": "ocean_sunfish",
+        "id": "oceansunfish",
         "image": "",
         "index": 69,
         "location": "Sea",
@@ -3442,7 +3442,7 @@ var critters = [
             22,
             23
         ],
-        "id": "saw_shark",
+        "id": "sawshark",
         "image": "",
         "index": 71,
         "location": "Sea",
@@ -3483,7 +3483,7 @@ var critters = [
             22,
             23
         ],
-        "id": "hammerhead_shark",
+        "id": "hammerheadshark",
         "image": "",
         "index": 72,
         "location": "Sea",
@@ -3524,7 +3524,7 @@ var critters = [
             22,
             23
         ],
-        "id": "great_white_shark",
+        "id": "greatwhiteshark",
         "image": "",
         "index": 73,
         "location": "Sea",
@@ -3572,7 +3572,7 @@ var critters = [
             22,
             23
         ],
-        "id": "whale_shark",
+        "id": "whaleshark",
         "image": "",
         "index": 74,
         "location": "Sea",
@@ -3632,7 +3632,7 @@ var critters = [
             8
         ],
         "price": 1500,
-        "size": "6 (Fin)",
+        "size": "4 (Fin)",
         "southern": [
             0,
             1,
@@ -3661,7 +3661,7 @@ var critters = [
             22,
             23
         ],
-        "id": "football_fish",
+        "id": "footballfish",
         "image": "",
         "index": 76,
         "location": "Sea",
@@ -3865,7 +3865,7 @@ var critters = [
             17,
             18
         ],
-        "id": "common_butterfly",
+        "id": "commonbutterfly",
         "image": "",
         "index": 0,
         "location": "Flying",
@@ -3916,7 +3916,7 @@ var critters = [
             17,
             18
         ],
-        "id": "yellow_butterfly",
+        "id": "yellowbutterfly",
         "image": "",
         "index": 1,
         "location": "Flying",
@@ -3959,7 +3959,7 @@ var critters = [
             17,
             18
         ],
-        "id": "tiger_butterfly",
+        "id": "tigerbutterfly",
         "image": "",
         "index": 2,
         "location": "Flying",
@@ -4004,10 +4004,10 @@ var critters = [
             17,
             18
         ],
-        "id": "peacock_butterfly",
+        "id": "peacockbutterfly",
         "image": "",
         "index": 3,
-        "location": "Flying by hybrid flowers",
+        "location": "Flying by Hybrid Flowers",
         "name": "Peacock butterfly",
         "northern": [
             2,
@@ -4043,7 +4043,7 @@ var critters = [
             17,
             18
         ],
-        "id": "common_bluebottle",
+        "id": "commonbluebottle",
         "image": "",
         "index": 4,
         "location": "Flying",
@@ -4080,7 +4080,7 @@ var critters = [
             17,
             18
         ],
-        "id": "paper_kite_butterfly",
+        "id": "paperkitebutterfly",
         "image": "",
         "index": 5,
         "location": "Flying",
@@ -4135,7 +4135,7 @@ var critters = [
             17,
             18
         ],
-        "id": "great_purple_emperor",
+        "id": "greatpurpleemperor",
         "image": "",
         "index": 6,
         "location": "Flying",
@@ -4172,7 +4172,7 @@ var critters = [
             15,
             16
         ],
-        "id": "monarch_butterfly",
+        "id": "monarchbutterfly",
         "image": "",
         "index": 7,
         "location": "Flying",
@@ -4209,7 +4209,7 @@ var critters = [
             22,
             23
         ],
-        "id": "emperor_butterfly",
+        "id": "emperorbutterfly",
         "image": "",
         "index": 8,
         "location": "Flying",
@@ -4250,7 +4250,7 @@ var critters = [
             15,
             16
         ],
-        "id": "agrias_butterfly",
+        "id": "agriasbutterfly",
         "image": "",
         "index": 9,
         "location": "Flying",
@@ -4287,10 +4287,10 @@ var critters = [
             15,
             16
         ],
-        "id": "rajah_brooke's_birdwing",
+        "id": "rajahbrookesbirdwing",
         "image": "",
         "index": 10,
-        "location": "Flying",
+        "location": "Flying by Purple Flowers",
         "name": "Rajah Brooke's birdwing",
         "northern": [
             0,
@@ -4329,7 +4329,7 @@ var critters = [
             14,
             15
         ],
-        "id": "queen_alexandra's_birdwing",
+        "id": "queenalexandrasbirdwing",
         "image": "",
         "index": 11,
         "location": "Flying",
@@ -4367,7 +4367,7 @@ var critters = [
         "id": "moth",
         "image": "",
         "index": 12,
-        "location": "Flying by light",
+        "location": "Flying by Light",
         "name": "Moth",
         "northern": [
             0,
@@ -4413,10 +4413,10 @@ var critters = [
             22,
             23
         ],
-        "id": "atlas_moth",
+        "id": "atlasmoth",
         "image": "",
         "index": 13,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Atlas moth",
         "northern": [
             3,
@@ -4449,7 +4449,7 @@ var critters = [
             14,
             15
         ],
-        "id": "madagascan_sunset_moth",
+        "id": "madagascansunsetmoth",
         "image": "",
         "index": 14,
         "location": "Flying",
@@ -4488,10 +4488,10 @@ var critters = [
             17,
             18
         ],
-        "id": "long_locust",
+        "id": "longlocust",
         "image": "",
         "index": 15,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Long locust",
         "northern": [
             3,
@@ -4531,10 +4531,10 @@ var critters = [
             17,
             18
         ],
-        "id": "migratory_locust",
+        "id": "migratorylocust",
         "image": "",
         "index": 16,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Migratory locust",
         "northern": [
             7,
@@ -4566,10 +4566,10 @@ var critters = [
             17,
             18
         ],
-        "id": "rice_grasshopper",
+        "id": "ricegrasshopper",
         "image": "",
         "index": 17,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Rice grasshopper",
         "northern": [
             7,
@@ -4602,7 +4602,7 @@ var critters = [
         "id": "grasshopper",
         "image": "",
         "index": 18,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Grasshopper",
         "northern": [
             6,
@@ -4639,7 +4639,7 @@ var critters = [
         "id": "cricket",
         "image": "",
         "index": 19,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Cricket",
         "northern": [
             8,
@@ -4673,10 +4673,10 @@ var critters = [
             22,
             23
         ],
-        "id": "bell_cricket",
+        "id": "bellcricket",
         "image": "",
         "index": 20,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Bell cricket",
         "northern": [
             8,
@@ -4705,7 +4705,7 @@ var critters = [
         "id": "mantis",
         "image": "",
         "index": 21,
-        "location": "On flowers",
+        "location": "On Flowers",
         "name": "Mantis",
         "northern": [
             2,
@@ -4745,10 +4745,10 @@ var critters = [
             15,
             16
         ],
-        "id": "orchid_mantis",
+        "id": "orchidmantis",
         "image": "",
         "index": 22,
-        "location": "On flowers (White)",
+        "location": "On Flowers (White)",
         "name": "Orchid mantis",
         "northern": [
             2,
@@ -4841,7 +4841,7 @@ var critters = [
         "id": "wasp",
         "image": "",
         "index": 24,
-        "location": "Shaking trees",
+        "location": "Shaking Trees",
         "name": "Wasp",
         "northern": [
             0,
@@ -4887,10 +4887,10 @@ var critters = [
             15,
             16
         ],
-        "id": "brown_cicada",
+        "id": "browncicada",
         "image": "",
         "index": 25,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Brown cicada",
         "northern": [
             6,
@@ -4916,10 +4916,10 @@ var critters = [
             15,
             16
         ],
-        "id": "robust_cicada",
+        "id": "robustcicada",
         "image": "",
         "index": 26,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Robust cicada",
         "northern": [
             6,
@@ -4945,10 +4945,10 @@ var critters = [
             15,
             16
         ],
-        "id": "giant_cicada",
+        "id": "giantcicada",
         "image": "",
         "index": 27,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Giant cicada",
         "northern": [
             6,
@@ -4974,10 +4974,10 @@ var critters = [
             15,
             16
         ],
-        "id": "walker_cicada",
+        "id": "walkercicada",
         "image": "",
         "index": 28,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Walker cicada",
         "northern": [
             7,
@@ -5001,10 +5001,10 @@ var critters = [
             17,
             18
         ],
-        "id": "evening_cicada",
+        "id": "eveningcicada",
         "image": "",
         "index": 29,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Evening cicada",
         "northern": [
             6,
@@ -5045,10 +5045,10 @@ var critters = [
             22,
             23
         ],
-        "id": "cicada_shell",
+        "id": "cicadashell",
         "image": "",
         "index": 30,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Cicada shell",
         "northern": [
             6,
@@ -5076,7 +5076,7 @@ var critters = [
             17,
             18
         ],
-        "id": "red_dragonfly",
+        "id": "reddragonfly",
         "image": "",
         "index": 31,
         "location": "Flying",
@@ -5105,7 +5105,7 @@ var critters = [
             15,
             16
         ],
-        "id": "darner_dragonfly",
+        "id": "darnerdragonfly",
         "image": "",
         "index": 32,
         "location": "Flying",
@@ -5144,7 +5144,7 @@ var critters = [
             15,
             16
         ],
-        "id": "banded_dragonfly",
+        "id": "bandeddragonfly",
         "image": "",
         "index": 33,
         "location": "Flying",
@@ -5237,7 +5237,7 @@ var critters = [
         "northern": [
             5
         ],
-        "price": "?",
+        "price": "300",
         "size": "",
         "southern": [
             11
@@ -5271,10 +5271,10 @@ var critters = [
             22,
             23
         ],
-        "id": "mole_cricket",
+        "id": "molecricket",
         "image": "",
         "index": 36,
-        "location": "Digging ground (Follow sound)",
+        "location": "Underground",
         "name": "Mole cricket",
         "northern": [
             0,
@@ -5315,7 +5315,7 @@ var critters = [
         "id": "pondskater",
         "image": "",
         "index": 37,
-        "location": "On ponds and rivers",
+        "location": "On Ponds and Rivers",
         "name": "Pondskater",
         "northern": [
             4,
@@ -5349,10 +5349,10 @@ var critters = [
             17,
             18
         ],
-        "id": "diving_beetle",
+        "id": "divingbeetle",
         "image": "",
         "index": 38,
-        "location": "On ponds and rivers",
+        "location": "On Ponds and Rivers",
         "name": "Diving beetle",
         "northern": [
             4,
@@ -5388,10 +5388,10 @@ var critters = [
             22,
             23
         ],
-        "id": "giant_water_bug",
+        "id": "giantwaterbug",
         "image": "",
         "index": 39,
-        "location": "On ponds and rivers",
+        "location": "On Ponds and Rivers",
         "name": "Giant water bug",
         "northern": [
             3,
@@ -5443,7 +5443,7 @@ var critters = [
         "id": "stinkbug",
         "image": "",
         "index": 40,
-        "location": "On flowers",
+        "location": "On Flowers",
         "name": "Stinkbug",
         "northern": [
             2,
@@ -5485,10 +5485,10 @@ var critters = [
             22,
             23
         ],
-        "id": "man-faced_stink_bug",
+        "id": "manfacedstinkbug",
         "image": "",
         "index": 41,
-        "location": "On flowers",
+        "location": "On Flowers",
         "name": "Man-faced stink bug",
         "northern": [
             2,
@@ -5529,7 +5529,7 @@ var critters = [
         "id": "ladybug",
         "image": "",
         "index": 42,
-        "location": "On flowers",
+        "location": "On Flowers",
         "name": "Ladybug",
         "northern": [
             2,
@@ -5576,10 +5576,10 @@ var critters = [
             22,
             23
         ],
-        "id": "tiger_beetle",
+        "id": "tigerbeetle",
         "image": "",
         "index": 43,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Tiger beetle",
         "northern": [
             1,
@@ -5634,10 +5634,10 @@ var critters = [
             22,
             23
         ],
-        "id": "jewel_beetle",
+        "id": "jewelbeetle",
         "image": "",
         "index": 44,
-        "location": "On tree stumps",
+        "location": "On Tree Stumps",
         "name": "Jewel beetle",
         "northern": [
             3,
@@ -5684,10 +5684,10 @@ var critters = [
             22,
             23
         ],
-        "id": "violin_beetle",
+        "id": "violinbeetle",
         "image": "",
         "index": 45,
-        "location": "On tree stumps",
+        "location": "On Tree Stumps",
         "name": "Violin beetle",
         "northern": [
             4,
@@ -5734,10 +5734,10 @@ var critters = [
             22,
             23
         ],
-        "id": "citrus_long-horned_beetle",
+        "id": "citruslonghornedbeetle",
         "image": "",
         "index": 46,
-        "location": "On tree stumps",
+        "location": "On Tree Stumps",
         "name": "Citrus long-horned beetle",
         "northern": [
             0,
@@ -5798,10 +5798,10 @@ var critters = [
             22,
             23
         ],
-        "id": "rosalia_batesi_beetle",
+        "id": "rosaliabatesibeetle",
         "image": "",
         "index": 47,
-        "location": "On tree stumps",
+        "location": "On Tree Stumps",
         "name": "Rosalia batesi beetle",
         "northern": [
             4,
@@ -5848,10 +5848,10 @@ var critters = [
             22,
             23
         ],
-        "id": "blue_weevil_beetle",
+        "id": "blueweevilbeetle",
         "image": "",
         "index": 48,
-        "location": "On trees (Coconut?)",
+        "location": "On Trees (Coconut?)",
         "name": "Blue weevil beetle",
         "northern": [
             6,
@@ -5892,10 +5892,10 @@ var critters = [
             22,
             23
         ],
-        "id": "dung_beetle",
+        "id": "dungbeetle",
         "image": "",
         "index": 49,
-        "location": "On ground (rolling snowballs)",
+        "location": "On the Ground (rolling snowballs)",
         "name": "Dung beetle",
         "northern": [
             0,
@@ -5938,10 +5938,10 @@ var critters = [
             22,
             23
         ],
-        "id": "earth-boring_dung_beetle",
+        "id": "earthboringdungbeetle",
         "image": "",
         "index": 50,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Earth-boring dung beetle",
         "northern": [
             6,
@@ -5969,10 +5969,10 @@ var critters = [
             7,
             23
         ],
-        "id": "scarab_beetle",
+        "id": "scarabbeetle",
         "image": "",
         "index": 51,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Scarab beetle",
         "northern": [
             6,
@@ -6013,10 +6013,10 @@ var critters = [
             22,
             23
         ],
-        "id": "drone_beetle",
+        "id": "dronebeetle",
         "image": "",
         "index": 52,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Drone beetle",
         "northern": [
             5,
@@ -6050,10 +6050,10 @@ var critters = [
             22,
             23
         ],
-        "id": "goliath_beetle",
+        "id": "goliathbeetle",
         "image": "",
         "index": 53,
-        "location": "On trees (Coconut)",
+        "location": "On Trees (Coconut)",
         "name": "Goliath beetle",
         "northern": [
             5,
@@ -6098,10 +6098,10 @@ var critters = [
             22,
             23
         ],
-        "id": "saw_stag",
+        "id": "sawstag",
         "image": "",
         "index": 54,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Saw stag",
         "northern": [
             6,
@@ -6142,10 +6142,10 @@ var critters = [
             22,
             23
         ],
-        "id": "miyama_stag",
+        "id": "miyamastag",
         "image": "",
         "index": 55,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Miyama stag",
         "northern": [
             6,
@@ -6171,10 +6171,10 @@ var critters = [
             7,
             23
         ],
-        "id": "giant_stag",
+        "id": "giantstag",
         "image": "",
         "index": 56,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Giant stag",
         "northern": [
             6,
@@ -6204,10 +6204,10 @@ var critters = [
             22,
             23
         ],
-        "id": "rainbow_stag",
+        "id": "rainbowstag",
         "image": "",
         "index": 57,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Rainbow stag",
         "northern": [
             5,
@@ -6243,10 +6243,10 @@ var critters = [
             22,
             23
         ],
-        "id": "cyclommatus_stag",
+        "id": "cyclommatusstag",
         "image": "",
         "index": 58,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Cyclommatus stag",
         "northern": [
             6,
@@ -6278,10 +6278,10 @@ var critters = [
             22,
             23
         ],
-        "id": "golden_stag",
+        "id": "goldenstag",
         "image": "",
         "index": 59,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Golden stag",
         "northern": [
             6,
@@ -6313,10 +6313,10 @@ var critters = [
             22,
             23
         ],
-        "id": "giraffe_stag",
+        "id": "giraffestag",
         "image": "",
         "index": 60,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Giraffe stag",
         "northern": [
             6,
@@ -6348,10 +6348,10 @@ var critters = [
             22,
             23
         ],
-        "id": "horned_dynastid",
+        "id": "horneddynastid",
         "image": "",
         "index": 61,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Horned dynastid",
         "northern": [
             6,
@@ -6383,10 +6383,10 @@ var critters = [
             22,
             23
         ],
-        "id": "horned_atlas",
+        "id": "hornedatlas",
         "image": "",
         "index": 62,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Horned atlas",
         "northern": [
             6,
@@ -6418,10 +6418,10 @@ var critters = [
             22,
             23
         ],
-        "id": "horned_elephant",
+        "id": "hornedelephant",
         "image": "",
         "index": 63,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Horned elephant",
         "northern": [
             6,
@@ -6453,10 +6453,10 @@ var critters = [
             22,
             23
         ],
-        "id": "horned_hercules",
+        "id": "hornedhercules",
         "image": "",
         "index": 64,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Horned hercules",
         "northern": [
             6,
@@ -6479,10 +6479,10 @@ var critters = [
             17,
             18
         ],
-        "id": "walking_stick",
+        "id": "walkingstick",
         "image": "",
         "index": 65,
-        "location": "On trees",
+        "location": "On Trees",
         "name": "Walking stick",
         "northern": [
             6,
@@ -6529,10 +6529,10 @@ var critters = [
             22,
             23
         ],
-        "id": "walking_leaf",
+        "id": "walkingleaf",
         "image": "",
         "index": 66,
-        "location": "Under trees, disguised as leaves",
+        "location": "Under Trees Disguised as Leafs",
         "name": "Walking leaf",
         "northern": [
             6,
@@ -6578,7 +6578,7 @@ var critters = [
         "id": "bagworm",
         "image": "",
         "index": 67,
-        "location": "Shaking trees",
+        "location": "Shaking Trees",
         "name": "Bagworm",
         "northern": [
             0,
@@ -6692,10 +6692,10 @@ var critters = [
             22,
             23
         ],
-        "id": "hermit_crab",
+        "id": "hermitcrab",
         "image": "",
         "index": 69,
-        "location": "Beach disguised as shells",
+        "location": "Beach disguised as Shells",
         "name": "Hermit crab",
         "northern": [
             0,
@@ -6756,10 +6756,10 @@ var critters = [
             22,
             23
         ],
-        "id": "wharf_roach",
+        "id": "wharfroach",
         "image": "",
         "index": 70,
-        "location": "On beach rocks",
+        "location": "On Beach Rocks",
         "name": "Wharf roach",
         "northern": [
             0,
@@ -6794,11 +6794,36 @@ var critters = [
         "type": "bugs"
     },
     {
-        "hours": [],
+        "hours": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+        ],
         "id": "fly",
         "image": "",
         "index": 71,
-        "location": "On rotten food",
+        "location": "On Trash Items",
         "name": "Fly",
         "northern": [
             0,
@@ -6897,7 +6922,7 @@ var critters = [
         "id": "flea",
         "image": "",
         "index": 73,
-        "location": "On Villager's heads",
+        "location": "Villager's Heads",
         "name": "Flea",
         "northern": [
             3,
@@ -6953,7 +6978,7 @@ var critters = [
         "id": "snail",
         "image": "",
         "index": 74,
-        "location": "On rocks (Raining)",
+        "location": "On Rocks (Rain)",
         "name": "Snail",
         "northern": [
             0,
@@ -7007,10 +7032,10 @@ var critters = [
             15,
             23
         ],
-        "id": "pill_bug",
+        "id": "pillbug",
         "image": "",
         "index": 75,
-        "location": "Hitting rocks",
+        "location": "Hitting Rocks",
         "name": "Pill bug",
         "northern": [
             0,
@@ -7053,7 +7078,7 @@ var critters = [
         "id": "centipede",
         "image": "",
         "index": 76,
-        "location": "Hitting rocks",
+        "location": "Hitting Rocks",
         "name": "Centipede",
         "northern": [
             0,
@@ -7102,7 +7127,7 @@ var critters = [
         "id": "spider",
         "image": "",
         "index": 77,
-        "location": "Shaking trees",
+        "location": "Shaking Trees",
         "name": "Spider",
         "northern": [
             0,
@@ -7151,7 +7176,7 @@ var critters = [
         "id": "tarantula",
         "image": "",
         "index": 78,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Tarantula",
         "northern": [
             0,
@@ -7188,7 +7213,7 @@ var critters = [
         "id": "scorpion",
         "image": "",
         "index": 79,
-        "location": "On ground",
+        "location": "On the Ground",
         "name": "Scorpion",
         "northern": [
             4,

@@ -28,7 +28,7 @@ def get_table(url):
     raise Exception("Didn't find any tables with a length of 80.")
 
 def add_critter(critter_type,critter,index):
-    critter_id = critter['Name'].lower().replace(' ','_')
+    critter_id = re.sub(r'[^a-z]+', '', critter['Name'].lower())
     months_north = parse_months(critter)
     months_south = convert_months(months_north)
     hours = parse_hours(critter['Time'])
