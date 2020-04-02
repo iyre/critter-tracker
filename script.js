@@ -1,5 +1,5 @@
 var settings = {
-  "version" : "v0.9",
+  "version" : "v0.9.2",
   "caught" : [],
   "offset" : 0,
   "filters" : {
@@ -64,29 +64,34 @@ function importCaughtCritters() {
 
 // initialize localstorage variables on first run
 function initStorage() {
-  // reset settings only if version has changed (to avoid malfunctions due to old bugs)
-  let outdated = (readSetting("version",true) != settings.version);
+  // reset settings only if minor version has changed, dont 
+  let outdated = (readSetting("version",true).split('.')[1] !== settings.version.split('.')[1]);
   if (outdated) {
     console.log('updating caught critters array');
     importCaughtCritters(); //changes to format - convert old list
   }
   for (var i in settings) {
     if (readSetting(i,true) === null) {
-      console.log('init','write',i);
+      //write new setting in storage
+      //console.log('init','write',i);
       writeSetting(i);
     }
-    else if (outdated && i != "caught") {
-      console.log('init2','write',i);
+    else if (outdated && i !== "caught") {
+      //overwrite outdated setting in storage
+      //console.log('init','over',i);
       writeSetting(i);
     }
-    else {
-      console.log('init','read',i);
+    else if (i !== "version") {
+      //read stored setting from storage, but dont import version
+      //console.log('init','read',i);
       settings[i] = readSetting(i);
     }
   }
 }
 
 initStorage();
+
+document.getElementById('version').innerHTML = settings.version;
 
 function setTime() {
   var newTime = document.getElementById("datetime").value;
@@ -227,7 +232,7 @@ function buildList() {
   for (critter of filtered) {
     var itemStr = '<article class="' + critter.type + (isCaught(critter.id) ? ' checked' : '') + '" id="' + critter.id + '">';
     itemStr += '<header class="critter-name"><h3>' + critter.name + '</h3></header>';
-    if (info['info-sprite']) itemStr += '<div class="critter-image">' + '<img src="images/sprites/' + critter.type + '/' + critter.id + '.png"/>' + '</div>';
+    if (info['info-sprite']) itemStr += '<div class="critter-image" style="background:url(&apos;images/sprites/' + critter.type + '.png&apos;) 0 -' + (critter.index * 64)  + 'px;background-size:100%;"></div>';
     if (info['info-price']) itemStr += '<div class="critter-info">' + critter.price.toLocaleString() + '</div>';
     if (info['info-location']) itemStr += '<div class="critter-info">' + critter.location + '</div>';
     if (info['info-size'] && toggles.type === "fish") itemStr += '<div class="critter-info">' + critter.size + '</div>';

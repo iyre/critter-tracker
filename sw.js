@@ -1,4 +1,4 @@
-var version = 'v0.9.1';
+var version = 'v0.9.2';
 const staticCacheName = 'critter-tracker-' + version;
 const assets = [
   '/critter-tracker/',
@@ -10,7 +10,9 @@ const assets = [
   '/critter-tracker/critters.js',
   '/critter-tracker/manifest.json',
   '/critter-tracker/images/favicon.png',
-  '/critter-tracker/images/icon-256.png'
+  '/critter-tracker/images/icon-256.png',
+  '/critter-tracker/images/sprites/fish.png',
+  '/critter-tracker/images/sprites/bugs.png',
 ];
 // install event
 self.addEventListener('install', evt => {

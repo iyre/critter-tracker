@@ -110,6 +110,7 @@ body {
 }
 
 article {
+  transition: all 100ms ease;
   align-items: center;
   text-align: center;
   padding: .2em;
@@ -127,7 +128,7 @@ article {
 article h3 {
   color: var(--fg-color-2);
   margin: .3em;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 3px black;
 }
 
 #cards article > * {
@@ -136,7 +137,7 @@ article h3 {
 
 article header{
   color: var(--fg-color-3);
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 3px black;
   padding: .2em;
   border-radius: 2px;
 }
@@ -149,9 +150,11 @@ article header{
   background-color: var(--bg-bugs);
 }
 
-.critter-image img {
-  width: var(--img-sm);
+.critter-image {
+  width: 64px;
+  height: 64px;
   opacity: var(--img-opacity);
+  justify-self: center;
 }
 
 .critter-info {
@@ -167,6 +170,7 @@ article header{
 }
 
 .checked {
+  transition: all 200ms ease;
   filter: brightness(.4);
   box-shadow: 0 0 5px transparent;
   border-color: transparent;
@@ -189,9 +193,14 @@ article header{
   border-radius: 2px;
 }
 
-footer,a {
+footer * {
   font-family:monospace;
   color: var(--fg-color-2);
   line-height: 2em;
   text-align: center;
+}
+
+#version {
+  line-height: 0.5em;
+  filter: opacity(0.1);
 }

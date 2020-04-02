@@ -84,6 +84,7 @@ function updateSetting(library,setting,clicked=false) {
                             console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
                             return;
                     }
+                    buildList();
                     break;
                 case "hemisphere":
                     switch(settings[library][setting]) {
@@ -107,6 +108,7 @@ function updateSetting(library,setting,clicked=false) {
                             console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
                             return;
                     }
+                    buildList();
                     break;
                 case "theme":
                     switch(settings[library][setting]) {
@@ -137,7 +139,6 @@ function updateSetting(library,setting,clicked=false) {
                     return;
             }
             writeSetting(library);
-            buildList();
             break;
         case "filters":
             switch(settings[library][setting]) {
