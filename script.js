@@ -65,7 +65,8 @@ function importCaughtCritters() {
 // initialize localstorage variables on first run
 function initStorage() {
   // reset settings only if minor version has changed, dont 
-  let outdated = (readSetting("version",true).split('.')[1] !== settings.version.split('.')[1]);
+  let outdated = readSetting("version",true);
+  if (outdated) outdated = outdated.split('.')[1] !== settings.version.split('.')[1];
   if (outdated) {
     console.log('updating caught critters array');
     importCaughtCritters(); //changes to format - convert old list
