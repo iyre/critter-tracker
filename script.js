@@ -7,9 +7,9 @@ var settings = {
     "unavailable" : true
   },
   "order" : [
-      ['name','desc'],
-      ['size','asc'],
-      ['location','desc']
+      ['name','asc'],
+      ['name','asc'],
+      ['name','asc']
   ],
   "toggles" : {
       "type" : "fish",
@@ -104,11 +104,6 @@ function resetTime() {
   time();
 }
 
-function showOffset() {
-  var offsetForm = document.getElementById("offset");
-  offsetForm.classList.toggle('hidden');
-}
-
 var clock = document.getElementById('clock');
 var month = 99;
 var hour = 99;
@@ -183,7 +178,7 @@ function filterValue(filtered,key,value) {
   return result;
 }
 
-function compareValues(key, order = 'desc') {
+function compareValues(key, order = 'asc') {
   return function innerSort(a, b) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
       // property doesn't exist on either object
@@ -217,6 +212,7 @@ function sortArrayByKey(critterArray) {
 }
 
 function buildList() {
+  window.scrollTo(0,0);
   var grid = document.getElementById("cards");
   var filters = readSetting("filters");
   var toggles = readSetting("toggles");
@@ -283,4 +279,11 @@ function toggleCaught(id) {
 function toggleSettings() {
   var menu = document.getElementById("settings-menu");
   menu.classList.toggle('hidden');
+
+}
+
+function showOffset() {
+  var offsetForm = document.getElementById("offset");
+  if (offsetForm.classList.contains('hidden')) document.getElementById("settings-menu").classList.remove('hidden');
+  offsetForm.classList.toggle('hidden');
 }

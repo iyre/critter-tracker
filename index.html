@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Critter Tracker Grid</title>
+        <title>Critter Tracker</title>
         <link rel="manifest" href="manifest.json" />
         <link rel="stylesheet" href="style.css" />
         <meta charset="utf-8">
@@ -13,13 +13,13 @@
         <header class="sticky">
             <div id="clock" onclick='showOffset()'></div>
             <div id='settings-icon' onclick='toggleSettings()'>⚙️</div>
-            <div id='offset' class='hidden'>
-                <h2>Custom Time</h2>
-                <input type='datetime-local' id='datetime'>
-                <button type='button' id='settime' onclick='setTime()'>Set</button>
-                <button type='button' id='resettime' onclick='resetTime()'>Clear</button>
-            </div>
             <div id='settings-menu' class='hidden'>
+                <div id='offset' class='hidden'>
+                    <h2>Custom Time</h2>
+                    <input type='datetime-local' id='datetime'>
+                    <button type='button' id='settime' onclick='setTime()'>Apply</button>
+                    <button type='button' id='resettime' onclick='resetTime()'>Clear</button>
+                </div>
                 <div class="menu">
                     <div class="menu-group">
                         <h2>Gereral</h2>

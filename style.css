@@ -1,4 +1,5 @@
 :root {
+  --bg-settings: rgba(51,51,51,0.85);
   --bg-page: #333;
   --bg-card: #FDF5E6;
   --bg-info: #CDD2C1;
@@ -21,6 +22,7 @@
 }
 
 [data-theme="dark"] {
+  --bg-settings: rgba(0,0,0,0.85);
   --bg-page: #000;
   --bg-card: #000;
   --bg-info: #000;
@@ -53,11 +55,12 @@ body {
   top: 0;
   right: 0;
   width: 100%;
-  background-color: var(--bg-page);
+  background-color: var(--bg-settings);
   color: var(--fg-color-2);
   display: inline-block;
   z-index: 9;
   outline: 4px solid var(--fg-border-2);
+  text-shadow: 0 0 5px black;
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
@@ -75,6 +78,7 @@ body {
   cursor: pointer;
 }
 #clock * {
+  text-shadow: 0 0 5px black;
   margin: 0 10px 0 10px;
   display: inline-block;
   pointer-events: none;
@@ -111,7 +115,7 @@ article {
   padding: .2em;
   margin: 0;
   background-color: var(--bg-card);
-  border-radius: .2em;
+  border-radius: 2px;
   display: grid;
   grid-template-rows: auto 1fr;
   row-gap: .2em;
@@ -134,7 +138,7 @@ article header{
   color: var(--fg-color-3);
   box-shadow: 0 0 5px black;
   padding: .2em;
-  border-radius: .2em;
+  border-radius: 2px;
 }
 
 .fish header{
@@ -155,7 +159,7 @@ article header{
   color: var(--fg-color-1);
   box-shadow: 0 0 2px rgba(0,0,0,0.5);
   padding: .2em;
-  border-radius: .2em;
+  border-radius: 2px;
 }
 
 .hidden {
@@ -182,6 +186,7 @@ article header{
 }
 #offset * {
   padding: 10px;
+  border-radius: 2px;
 }
 
 footer,a {
