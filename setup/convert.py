@@ -37,7 +37,6 @@ def add_critter(critter_type,critter,index):
     entry['index'] = index
     entry['type'] = critter_type
     entry['name'] = critter['Name']
-    entry['image'] = ''
     entry['price'] = critter['Price']
     entry['location'] = critter['Location']
     entry['size'] = critter['Shadow size'] if critter_type == 'fish' else ''
