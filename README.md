@@ -4,12 +4,23 @@ See which critters are currently appearing in your game, and keep track of what 
 https://iyre.github.io/critter-tracker/
 
 ## Usage
-* Click rows to mark as caught
-* Toggle buttons at the top to hide creatures that have been completed or aren't currently available. 
-* Switch between nothern/southern hemispheres and lists of fish/bugs. *These buttons display the current mode.*
-* Click the clock to set a custom date/time to match your game.
-* Change the theme by clicking the moon icon.
-* Sort the list using the column headers.
+* Click cards to mark critters as finished
+* Click the clock to set a custom date and time to reflect your game
+* Open settings with the gear icon
+
+### Settings
+* Switch between fish and bugs display
+* Switch between northern and southern hemispheres
+* Switch between light and dark themes
+* Show or hide various information
+  * Critter image
+  * Price
+  * Location
+  * Size (Fish only)
+* Filter out critters marked as caught
+* Filter out critters not currently available based on the time and date
+* Sort critters based on name, price, location, and size
+  * Clicking a sort option will set it to highest priority. Clicking again will reverse the direction
 
 ## To Do
 - [X] fish collection
@@ -20,5 +31,6 @@ https://iyre.github.io/critter-tracker/
 - [X] bug collection
 - [X] sorting
 - [X] service worker
-- [ ] look and feel
+- [X] images of critters
+- [X] toggle information shown
 - [ ] per-creature schedule

@@ -1,14 +1,29 @@
 var settings = {
-  "critter_tracker_version" : "v0.8",
-  "critter_tracker_theme" : "light",
-  "critter_hemisphere" : "northern",
-  "critter_type" : "fish",
-  "critter_sort" : [["size","desc"],["location","desc"],["name","desc"]],
-  "critter_caught" : [],
-  "critter_hide_caught" : false,
-  "critter_hide_time" : true,
-  "critter_time_offset" : 0
+  "version" : "v0.9",
+  "caught" : [],
+  "offset" : 0,
+  "filters" : {
+    "caught" : false,
+    "unavailable" : true
+  },
+  "order" : [
+      ['name','desc'],
+      ['size','asc'],
+      ['location','desc']
+  ],
+  "toggles" : {
+      "type" : "fish",
+      "hemisphere" : "northern",
+      "theme" : "light"
+  },
+  "info" : {
+      "info-sprite" : true,
+      "info-price" : false,
+      "info-location" : true,
+      "info-size" : true
+  }
 };
+
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/critter-tracker/sw.js')
@@ -16,102 +31,76 @@ if('serviceWorker' in navigator){
     .catch(err => console.log('service worker not registered', err));
 }
 
-function readSetting(name) {
-  var result = JSON.parse(localStorage.getItem(name));
-  if (result === null) {
+function readSetting(name,raw=false) {
+  let itemString = "critter_tracker_" + name;
+  var result = JSON.parse(localStorage.getItem(itemString));
+  if (result === null && !raw) {
     result = settings[name];
   }
   return result;
 }
 
-function writeSetting(name, content) {
-  var valueString = JSON.stringify(content);
-  localStorage.setItem(name, valueString);
-  settings[name] = content;
+function writeSetting(name) {
+  let itemString = "critter_tracker_" + name;
+  var valueString = JSON.stringify(settings[name]);
+  localStorage.setItem(itemString, valueString);
+}
+
+function importCaughtCritters() {
+  let current = readSetting("caught");
+  let legacy1 = JSON.parse(localStorage.getItem("critter_caught"));
+  let legacy2 = JSON.parse(localStorage.getItem("caught"));
+  if (Array.isArray(legacy1)) {current = current.concat(legacy1);}
+  if (Array.isArray(legacy2)) {current = current.concat(legacy2);}
+  let tempObj = new Object();
+  for (item of current) {
+    let stripped = item.replace(/[^a-zA-Z]/g, "");
+    if (stripped === "") {continue;}
+    tempObj[stripped] = null;
+  }
+  settings.caught = Object.keys(tempObj);
+  writeSetting("caught");
 }
 
 // initialize localstorage variables on first run
 function initStorage() {
   // reset settings only if version has changed (to avoid malfunctions due to old bugs)
-  if (readSetting("critter_tracker_version") != settings["critter_tracker_version"]) {
-    for (var i in settings) {
-      if (i === "critter_caught") {continue;} //don't overwrite caught critters
-      localStorage.setItem(i, JSON.stringify(settings[i]));
-    }
+  let outdated = (readSetting("version",true) != settings.version);
+  if (outdated) {
+    console.log('updating caught critters array');
+    importCaughtCritters(); //changes to format - convert old list
   }
-  // create any missing settings
   for (var i in settings) {
-    if (localStorage.getItem(i) === null) {
-      localStorage.setItem(i, JSON.stringify(settings[i]));
+    if (readSetting(i,true) === null) {
+      console.log('init','write',i);
+      writeSetting(i);
+    }
+    else if (outdated && i != "caught") {
+      console.log('init2','write',i);
+      writeSetting(i);
+    }
+    else {
+      console.log('init','read',i);
+      settings[i] = readSetting(i);
     }
   }
 }
 
 initStorage();
 
-//apply color theme to match setting
-document.getElementsByTagName("BODY")[0].setAttribute("data-theme",readSetting('critter_tracker_theme'));
-
-//init toggle buttons
-var toggleButtons = document.querySelectorAll('.toggleBtn');
-toggleButtons.forEach((btn) => {
-  if (readSetting(btn.id)) {
-    btn.classList.toggle('enabled')
-  }
-});
-
-var region = readSetting("critter_hemisphere");
-var hemisphereSwitch = document.getElementById("hemisphere");
-//console.log(region);
-hemisphereSwitch.innerHTML = region;
-
-function changeHemisphere() {
-  if (region === "northern") {
-    region = "southern";
-  } else {
-    region = "northern";
-  }
-  hemisphere.innerHTML = region;
-  writeSetting('critter_hemisphere', region);
-  buildList();
-}
-
-var critterType = readSetting("critter_type");
-var critterSwitch = document.getElementById("critter");
-//console.log(critter);
-critterSwitch.innerHTML = critterType;
-
-function changeCritterType() {
-  if (critterType === "fish") {
-    critterType = "bugs";
-  } else {
-    critterType = "fish";
-  }
-  critterSwitch.innerHTML = critterType;
-  writeSetting('critter_type', critterType);
-  buildList();
-}
-
-function toggleButton(event) {
-  var toggle_id = event.target.id;
-  var hide = readSetting(toggle_id);
-  hide = !hide;
-  writeSetting(toggle_id, hide);
-  event.target.classList.toggle('enabled');
-  buildList();
-}
-
 function setTime() {
   var newTime = document.getElementById("datetime").value;
   if (newTime == "") {return;}
   offset = Date.parse(newTime) - Date.now();
-  writeSetting("critter_time_offset", offset);
+  settings.offset = offset;
+  writeSetting("offset");
   time();
 }
 
 function resetTime() {
   offset = 0;
-  writeSetting("critter_time_offset", offset);
+  settings.offset = 0;
+  writeSetting("offset");
   time();
 }
 
@@ -121,37 +110,67 @@ function showOffset() {
 }
 
 var clock = document.getElementById('clock');
-
 var month = 99;
 var hour = 99;
-var last_hour = 99;
-var offset = readSetting("critter_time_offset");;
+var last_hour = 99; //for automatic update on the hour change
+var offset = readSetting("offset");
 
 function time() {
   var d = new Date();
   d.setTime(d.getTime() + offset);
+  var tzoffset = d.getTimezoneOffset() * 60000;
   var s = d.getSeconds();
   var m = d.getMinutes();
   hour = d.getHours();
   month = d.getMonth();
+  var mon = new Array();
+  mon[0] = "January";
+  mon[1] = "February";
+  mon[2] = "March";
+  mon[3] = "April";
+  mon[4] = "May";
+  mon[5] = "June";
+  mon[6] = "July";
+  mon[7] = "August";
+  mon[8] = "September";
+  mon[9] = "October";
+  mon[10] = "November";
+  mon[11] = "December";
+  var n = mon[d.getMonth()];
+  var dateString = '<h3 class="date">' + n + ' ' + d.getDate() + '</h3>';
+  dateString += '<h3 class="time">' + d.toLocaleTimeString() + '</h3>';
   if (last_hour != hour) {buildList();}
   last_hour = hour;
-  clock.textContent = d.toLocaleString();
+  clock.innerHTML = dateString;
+}
+
+function setDatePlaceholder() {
+  var localTime = new Date(Date.now() + offset);
+  var localTimeISO = localTime.toLocaleString().slice(0, -1);
+  var dateTimeInput = document.getElementById('datetime');
+  console.log(Date.now())
+  console.log(offset);
+  console.log(localTime);
+  console.log(localTimeISO);
+  dateTimeInput.value = localTimeISO;//d.toISOString();
+  console.log(dateTimeInput.value)
 }
 
 time();
 setInterval(time, 1000);
+//setDatePlaceholder()
 
 function filterCaught(filtered) {
-  var caught = readSetting("critter_caught");
+  var caught = readSetting("caught");
   var result = filtered.filter(function(critter) {
     return caught.indexOf(critter.id) === -1;
   });
   return result;
 }
 
-function filterTime(filtered) {
+function filterTime(filtered,region="northern") {
   var result = filtered.filter(function(critter) {
+    //console.log(month,critter[region]);
     return critter.hours.includes(hour) && critter[region].includes(month);
   });
   return result;
@@ -189,73 +208,60 @@ function compareValues(key, order = 'desc') {
 }
 
 function sortArrayByKey(critterArray) {
-  var sort = readSetting('critter_sort');
+  var order = readSetting('order');
   result = critterArray;
-  for (column of sort) {
-    result = result.sort(compareValues(column[0],column[1]));
+  for (var i = order.length-1; i >=0; i--) {
+    result = result.sort(compareValues(order[i][0],order[i][1]));
   }
   return result;
 }
 
 function buildList() {
-  var tableHTML = '';
-  var cols = {'fish': ['Name','Location','Size'], 'bugs':['Name','Location']}
-  for (var i in cols[critterType]) {
-    tableHTML += '<th id="' + cols[critterType][i].toLowerCase() + '">' + cols[critterType][i] + '</th>'
-  }
-  tableHTML = '<thead><tr>' + tableHTML + '</tr></thead><tbody>'
-  var hideCaught = readSetting("critter_hide_caught");
-  var hideTime = readSetting("critter_hide_time");
-  var filtered = filterValue(critters,'type',critterType);
-
-  if (hideCaught) {filtered = filterCaught(filtered);}
-  if (hideTime) {filtered = filterTime(filtered);}
+  var grid = document.getElementById("cards");
+  var filters = readSetting("filters");
+  var toggles = readSetting("toggles");
+  var info = readSetting("info");
+  var filtered = filterValue(critters,'type',toggles.type);
+  if (filters.caught) {filtered = filterCaught(filtered);}
+  if (filters.unavailable) {filtered = filterTime(filtered,toggles.hemisphere);}
 
   filtered = sortArrayByKey(filtered);
   
-  for (var i in filtered) {
-    tableHTML += '<tr id="' + filtered[i].id + '" class="' + (isCaught(filtered[i].id) ? 'checked' : '') + '">';
-    tableHTML += '<td>' + filtered[i].name + '</td>';
-    tableHTML += '<td>' + filtered[i].location + '</td>';
-    if (critterType === "fish") {tableHTML += '<td>' + filtered[i].size + '</td>';}
-    tableHTML += '</tr>';
+  var gridStr = ''
+  for (critter of filtered) {
+    var itemStr = '<article class="' + critter.type + (isCaught(critter.id) ? ' checked' : '') + '" id="' + critter.id + '">';
+    itemStr += '<header class="critter-name"><h3>' + critter.name + '</h3></header>';
+    if (info['info-sprite']) itemStr += '<div class="critter-image">' + '<img src="images/sprites/' + critter.type + '/' + critter.id + '.png"/>' + '</div>';
+    if (info['info-price']) itemStr += '<div class="critter-info">' + critter.price.toLocaleString() + '</div>';
+    if (info['info-location']) itemStr += '<div class="critter-info">' + critter.location + '</div>';
+    if (info['info-size'] && toggles.type === "fish") itemStr += '<div class="critter-info">' + critter.size + '</div>';
+    itemStr += '</article>';
+    gridStr += itemStr;
   }
-  document.getElementById("critterList").innerHTML = tableHTML+'<tbody>';
+  grid.innerHTML = gridStr;
+  updateCaught();
+  document.querySelectorAll('article').forEach(item => {
+    item.addEventListener('click', function(ev) {
+      console.log(ev.target.id)
+      toggleCaught(ev.target.id);
+    })
+  })
 }
 
-var list = document.querySelector('table');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'TD') {
-  	var critter_id = ev.target.parentNode.id;
-    toggleCaught(critter_id);
-    //console.log(critter_id);
-    buildList()
-  }
-  if (ev.target.tagName === 'TH') {
-    //console.log(ev.target.id);
-    setSort(ev.target.id);
-  }
-}, false);
-
-function setSort(column) {
-  var sortSetting = readSetting('critter_sort');
-  var lastSort = sortSetting.length-1;
-  if (sortSetting[lastSort][0] === column) {
-    sortSetting[lastSort][1] = sortSetting[lastSort][1] === 'desc' ? 'asc' : 'desc';
-    //console.log('toggle',column,sortSetting[lastSort][1]);
-  }
-  else {
-    for (var i=0; i<lastSort; i++) {
-      sortSetting[i] = sortSetting[i+1]; 
+function updateCaught() {
+  let c = settings.filters.caught ? 'hidden' : 'checked';
+  document.querySelectorAll('.item').forEach(item => {
+    if (isCaught(item.id)) {
+      item.classList.add(c);
     }
-    sortSetting[lastSort] = [column.toLowerCase(),'desc'];
-  }
-  writeSetting('critter_sort',sortSetting);
-  buildList();
+    else {
+      item.classList.remove('hidden','checked');
+    }
+  });
 }
 
 function locateCaught(id) {
-	return readSetting("critter_caught").indexOf(id);
+	return settings.caught.indexOf(id);
 }
 
 function isCaught(id) {
@@ -263,18 +269,18 @@ function isCaught(id) {
 }
 
 function toggleCaught(id) {
-  var caught = readSetting("critter_caught");
   if(isCaught(id)) {
-    caught.splice(locateCaught(id),1);
+    settings.caught.splice(locateCaught(id),1);
   }
   else {
-  	caught.push(id);
+  	settings.caught.push(id);
   }
-  writeSetting("critter_caught", caught);
+  let c = settings.filters.caught ? 'hidden' : 'checked';
+  document.getElementById(id).classList.toggle(c);
+  writeSetting("caught");
 }
 
-function changeTheme() {
-  let themeSetting = readSetting('critter_tracker_theme') === 'dark' ? 'light' : 'dark';
-  writeSetting('critter_tracker_theme',themeSetting);
-  document.getElementsByTagName("BODY")[0].setAttribute("data-theme",themeSetting);
+function toggleSettings() {
+  var menu = document.getElementById("settings-menu");
+  menu.classList.toggle('hidden');
 }

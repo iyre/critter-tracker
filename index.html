@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Critter Tracker</title>
+        <title>Critter Tracker Grid</title>
         <link rel="manifest" href="manifest.json" />
         <link rel="stylesheet" href="style.css" />
         <meta charset="utf-8">
@@ -10,22 +10,115 @@
         <link rel="icon" type="image/png" href="images/favicon.png" />
     </head>
     <body>
-        <div id='settings'>
-            <div id='critter_hide_caught' class='toggleBtn' onclick='toggleButton(event)'>Hide Caught</div>
-            <div id='critter_hide_time' class='toggleBtn' onclick='toggleButton(event)'>Hide Unavailable</div>
-            <div id='hemisphere' class='switchBtn' onclick='changeHemisphere()'>Hemisphere</div>
-            <div id='critter' class='switchBtn' onclick='changeCritterType()'>Critter</div>
-            <div id='clock' onclick='showOffset()'></div>
-            <div id='theme' class='toggleBtn' onclick='changeTheme()'>🌗</div>
+        <header class="sticky">
+            <div id="clock" onclick='showOffset()'></div>
+            <div id='settings-icon' onclick='toggleSettings()'>⚙️</div>
             <div id='offset' class='hidden'>
+                <h2>Custom Time</h2>
                 <input type='datetime-local' id='datetime'>
                 <button type='button' id='settime' onclick='setTime()'>Set</button>
-                <button type='button' id='resettime' onclick='resetTime()'>Reset</button>
+                <button type='button' id='resettime' onclick='resetTime()'>Clear</button>
             </div>
-        </div>
-        <table id="critterList"></table>
+            <div id='settings-menu' class='hidden'>
+                <div class="menu">
+                    <div class="menu-group">
+                        <h2>Gereral</h2>
+                        <div id="type" class="setting toggle">
+                            <div class="badge"></div>
+                            <label class="label">
+                                Critters
+                            </label>
+                        </div>
+                        <div id="hemisphere" class="setting toggle">
+                            <div class="badge"></div>
+                            <label class="label">
+                                Hemisphere
+                            </label>
+                        </div>
+                        <div id="theme" title="dark" class="setting toggle">
+                            <div class="badge"></div>
+                            <label class="label">
+                                Theme
+                            </label>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h2>Info</h2>
+                        <div id="info-sprite" class="setting info">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Sprite
+                            </label>
+                        </div>
+                        <div id="info-price" class="setting info">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Price
+                            </label>
+                        </div>
+                        <div id="info-location" class="setting info">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Location
+                            </label>
+                        </div>
+                        <div id="info-size" class="setting info">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Size
+                            </label>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h2>Filter</h2>
+                        <div id="caught" class="setting filter">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Caught
+                            </label>
+                        </div>
+                        <div id="unavailable" class="setting filter">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Unavailable
+                            </label>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h2>Sort</h2>
+                        <div id="name" class="setting sort">
+                            <div class="badge order"></div>
+                            <label class="label">
+                                Name
+                            </label>
+                        </div>
+                        <div id="price" class="setting sort">
+                            <div class="badge order"></div>
+                            <label class="label">
+                                Price
+                            </label>
+                        </div>
+                        <div id="location" class="setting sort">
+                            <div class="badge order"></div>
+                            <label class="label">
+                                Location
+                            </label>
+                        </div>
+                        <div id="size" class="setting sort">
+                            <div class="badge order"></div>
+                            <label class="label">
+                                Size
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="cards"></div>
         <footer><a href='https://github.com/iyre/critter-tracker'>source</a></footer>
         <script src="critters.js"></script>
         <script src="script.js"></script>
+        <script src="settings.js"></script>
+        <link rel="stylesheet" href="settings.css" />
     </body>
 </html>

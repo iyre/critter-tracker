@@ -1,136 +1,192 @@
 :root {
-  --bg-color-1: #eee;
-  --bg-color-2: #ddd;
-  --bg-color-3: #aaa;
-  --bg-color-4: #555;
-  --bg-color-5: #333;
+  --bg-page: #333;
+  --bg-card: #FDF5E6;
+  --bg-info: #CDD2C1;
+  --bg-fish: #2196F3;
+  --bg-bugs: #4CAF50;
+
+  --bg-set: #EEE;
+  --fg-set: #000;
 
   --fg-color-1: #000;
-  --fg-color-2: #999;
-  --fg-color-3: #fff;
+  --fg-color-2: #FFF;
+
+  --fg-border-1: rgba(150,150,150,0);
+  --fg-border-2: rgba(51,51,51,0.5);
+
+  --img-opacity: 1;
+  --img-sm: 64px;
+  --img-md: 96px;
+  --img-lg: 128px;
 }
 
 [data-theme="dark"] {
-  --bg-color-1: #111;
-  --bg-color-2: #333;
-  --bg-color-3: #666;
-  --bg-color-4: #999;
-  --bg-color-5: #ccc;
+  --bg-page: #000;
+  --bg-card: #000;
+  --bg-info: #000;
+  --bg-fish: #000;
+  --bg-bugs: #000;
 
-  --fg-color-1: #fff;
-  --fg-color-2: #777;
-  --fg-color-3: #000;
-}
+  --bg-set: #BBB;
+  --fg-set: #222;
 
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.0em;
-  line-height: 1.5em;
-}
+  --fg-color-1: #aaa;
+  --fg-color-2: #ccc;
 
-@media screen and (min-width: 769px) {
-  * {
-    font-size: 1.05em;
-  }
+  --fg-border-1: rgba(150,150,150,0.5);
+  --fg-border-2: rgba(0,0,0,0.5);
+
+  --img-opacity: .8;
 }
 
 body {
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--bg-color-1);
-  color: var(--fg-color-1);
-}
-
-#settings {
-  padding: 8px 4px 0px 8px;
-}
-
-.banner {
-  align-content: center;
-  display: none;
-  justify-content: center;
-  width: 100%;
-}
-
-.toggleBtn, .switchBtn, #clock {
-  line-height: 1em;
-  display: inline-block;
-  cursor: pointer;
-  margin: 0px 4px 8px 0px;
-  cursor: pointer;
-  background: var(--bg-color-2);
-
-  transition: 0.2s;
-  padding: 10px;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  font: 1.1em "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--fg-color-3);
   user-select: none;
-  text-transform: capitalize;
+  text-align: center;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--bg-page);
+  color: var(--fg-color-2);
+  display: inline-block;
+  z-index: 9;
+  outline: 4px solid var(--fg-border-2);
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + #cards {
+  padding-top: 3.5em;
+}
+
+#clock {
+  color: var(--fg-color-2);
+  padding: .5em;
+  margin: .5em;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#clock * {
+  margin: 0 10px 0 10px;
+  display: inline-block;
+  pointer-events: none;
+}
+
+#settings-icon {
+  position: absolute;
+  top:0;
+  right:0;
+  text-align: center;
+  margin: .2em;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#settings-menu {
+  padding: 0 8px;
+}
+
+#cards {
+  padding: .2em;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat( auto-fit, minmax(10em, 1fr) );
+  grid-auto-rows: auto;
+  column-gap: .5em;
+  row-gap: .5em;
+}
+
+article {
+  align-items: center;
+  text-align: center;
+  padding: .2em;
+  margin: 0;
+  background-color: var(--bg-card);
+  border-radius: .2em;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: .2em;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+  border: 1px solid var(--fg-border-1);
+}
+
+article h3 {
+  color: var(--fg-color-2);
+  margin: .3em;
+  text-shadow: 0 0 5px black;
+}
+
+#cards article > * {
+  pointer-events: none;
+}
+
+article header{
+  color: var(--fg-color-3);
+  box-shadow: 0 0 5px black;
+  padding: .2em;
+  border-radius: .2em;
+}
+
+.fish header{
+  background-color: var(--bg-fish);
+}
+
+.bugs header{
+  background-color: var(--bg-bugs);
+}
+
+.critter-image img {
+  width: var(--img-sm);
+  opacity: var(--img-opacity);
+}
+
+.critter-info {
+  background-color: var(--bg-info);
+  color: var(--fg-color-1);
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  padding: .2em;
+  border-radius: .2em;
 }
 
 .hidden {
   display:none;
 }
-.enabled {
-  background: var(--bg-color-5); 
-  color: var(--fg-color-3); 
+
+.checked {
+  filter: brightness(.4);
+  box-shadow: 0 0 5px transparent;
+  border-color: transparent;
 }
 
-#offset * {
+#offset {
+  text-align: center;
   margin: 10px 0 20px 10px;
-  padding: 10px;
 }
-
-table {
+#offset input, #offset button {
+  background-color: var(--bg-set);
+}
+#offset h2 {
   margin: 0;
-  padding: 0;
-  width: 100%; 
-  border-collapse: collapse; 
+  margin-bottom: 0.2em;
+  padding: 0 0.4em;
 }
-
-table tr {
-  transition: 0.2s;
-  cursor: pointer;
-/*
-  position: relative;
-  padding: 1em .5em 1em 3em;
-  background: #eee;
-  font-size: 1em;
-*/
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-table tr:hover {
-  background: var(--bg-color-4);
-  color: var(--fg-color-3);
-}
-
-td, th { 
-  padding: 10px; 
-  border: 1px solid var(--fg-color-2); 
-  text-align: left; 
-}
-
-table th {
-  background: var(--bg-color-5);
-  color: var(--fg-color-3); 
-  font-weight: bold; 
+#offset * {
+  padding: 10px;
 }
 
 footer,a {
   font-family:monospace;
   color: var(--fg-color-2);
-  line-height:2em;
+  line-height: 2em;
   text-align: center;
-}
-
-.checked {
-  background: var(--bg-color-3);
-  color: var(--fg-color-1);
 }

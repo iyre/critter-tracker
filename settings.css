@@ -1,0 +1,75 @@
+.menu {
+  display: grid;
+  grid-template-columns: repeat(4, 8em);
+  grid-auto-rows: auto;
+  justify-items: center;
+  justify-content:center;
+  grid-gap: 1em;
+  padding-bottom: 1em;
+  font-size: 1.1em;
+  text-align: left;
+  color: var(--fg-color-2);
+}
+
+@media screen and (max-width: 45em) {
+  .menu {
+    grid-template-columns: repeat(2, 8em);
+  }
+}
+
+@media screen and (max-width: 23em) {
+  .menu {
+    grid-template-columns: repeat(1, 8em);
+  }
+}
+  
+.menu h2 {
+  margin: 0;
+  padding: 0 0.4em;
+}
+
+.menu-group {
+  width: 100%;
+  max-width: 8em;
+  display: grid;
+  grid-gap: 0.3em;
+  align-content: start;
+  grid-auto-rows: auto;
+  user-select: none;
+  line-height: 1.8em;
+}
+
+.setting {
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--bg-page);
+  border: 1px solid var(--fg-color-2);
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+.setting {
+  grid-template-columns: 1.5em auto;
+  display: inline-grid;
+}
+
+.label {
+  padding: 0 0.4em;
+  background: none;
+}
+.badge {
+  margin-left: 0.4em;
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+  font-size: 0.75em;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  border: 1px solid;
+  height: 1.4em;
+  line-height: 1.4em;
+}
+
+.setting > * {
+  pointer-events: none;
+}
