@@ -42,7 +42,7 @@
 }
 
 body {
-  font: 1.1em "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font: 1em "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   background-color: var(--bg-page);
   color: var(--fg-color-3);
   user-select: none;
@@ -178,7 +178,7 @@ article header{
 
 #offset {
   text-align: center;
-  margin: 10px 0 20px 10px;
+  margin: 10px;
 }
 #offset input, #offset button {
   background-color: var(--bg-set);
@@ -263,27 +263,29 @@ footer * {
 }
 
 .menu {
-  display: grid;
-  grid-template-columns: repeat(4, 8em);
-  grid-auto-rows: auto;
-  justify-items: center;
-  justify-content:center;
-  grid-gap: 1em;
-  padding-bottom: 1em;
-  font-size: 1.1em;
-  text-align: left;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-content: center;
+  font-size: 1.2em;
+  height: 18em;
   color: var(--fg-color-2);
 }
 
 @media screen and (max-width: 45em) {
   .menu {
-    grid-template-columns: repeat(2, 8em);
+    height: 20em;
   }
 }
-
-@media screen and (max-width: 23em) {
+@media screen and (max-width: 35em) {
   .menu {
-    grid-template-columns: repeat(1, 8em);
+    height: 28em;
+  }
+}
+@media screen and (max-width: 25em) {
+  .menu {
+    height: 100vh;
+    font-size: .9em;
   }
 }
   
@@ -293,6 +295,7 @@ footer * {
 }
 
 .menu-group {
+  margin: 0.5em;
   width: 100%;
   max-width: 8em;
   display: grid;

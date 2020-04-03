@@ -13,7 +13,7 @@
     <body>
         <header class="sticky">
             <div id="clock" onclick='showOffset()'></div>
-            <div id='settings-icon' onclick='toggleSettings()'>⚙️</div>
+            <div id='settings-icon' onclick='toggleHidden("settings-menu")'>⚙️</div>
             <div id='settings-menu' class='hidden'>
                 <div id='offset' class='hidden'>
                     <h2>Custom Time</h2>
@@ -83,21 +83,6 @@
                         </div>
                     </div>
                     <div class="menu-group">
-                        <h2>Filter</h2>
-                        <div id="caught" class="setting filter">
-                            <div class="badge check"></div>
-                            <label class="label">
-                                Caught
-                            </label>
-                        </div>
-                        <div id="unavailable" class="setting filter">
-                            <div class="badge check"></div>
-                            <label class="label">
-                                Unavailable
-                            </label>
-                        </div>
-                    </div>
-                    <div class="menu-group">
                         <h2>Sort</h2>
                         <div id="name" class="setting sort">
                             <div class="badge order"></div>
@@ -121,6 +106,21 @@
                             <div class="badge order"></div>
                             <label class="label">
                                 Size
+                            </label>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h2>Filter</h2>
+                        <div id="caught" class="setting filter">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Caught
+                            </label>
+                        </div>
+                        <div id="unavailable" class="setting filter">
+                            <div class="badge check"></div>
+                            <label class="label">
+                                Unavailable
                             </label>
                         </div>
                     </div>
