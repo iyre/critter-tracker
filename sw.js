@@ -1,12 +1,10 @@
-var version = 'v0.9.3';
+var version = 'v0.10.0';
 const staticCacheName = 'critter-tracker-' + version;
 const assets = [
   '/critter-tracker/',
   '/critter-tracker/index.html',
   '/critter-tracker/style.css',
-  '/critter-tracker/settings.css',
   '/critter-tracker/script.js',
-  '/critter-tracker/settings.js',
   '/critter-tracker/critters.js',
   '/critter-tracker/manifest.json',
   '/critter-tracker/images/favicon.png',

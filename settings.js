@@ -26,7 +26,7 @@ function updateSortingBadges() {
         for (var i = 0; i < settings["order"].length; i++) {
             if (settings["order"][i][0] === column) {
                 s = i+1;
-                if (settings["order"][i][1] === 'asc') {
+                if (settings["order"][i][1] === 'desc') {
                     s += '*';
                 }
                 break;

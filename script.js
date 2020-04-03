@@ -1,5 +1,5 @@
 var settings = {
-  "version" : "v0.9.2",
+  "version" : "v0.10.0",
   "caught" : [],
   "offset" : 0,
   "filters" : {
@@ -20,10 +20,13 @@ var settings = {
       "info-sprite" : true,
       "info-price" : false,
       "info-location" : true,
-      "info-size" : true
+      "info-size" : true,
+      "info-month" : false,
+      "info-time" : true
   }
 };
 
+var monthMap = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/critter-tracker/sw.js')
@@ -119,26 +122,10 @@ var offset = readSetting("offset");
 function time() {
   var d = new Date();
   d.setTime(d.getTime() + offset);
-  var tzoffset = d.getTimezoneOffset() * 60000;
-  var s = d.getSeconds();
-  var m = d.getMinutes();
   hour = d.getHours();
   month = d.getMonth();
-  var mon = new Array();
-  mon[0] = "January";
-  mon[1] = "February";
-  mon[2] = "March";
-  mon[3] = "April";
-  mon[4] = "May";
-  mon[5] = "June";
-  mon[6] = "July";
-  mon[7] = "August";
-  mon[8] = "September";
-  mon[9] = "October";
-  mon[10] = "November";
-  mon[11] = "December";
-  var n = mon[d.getMonth()];
-  var dateString = '<h3 class="date">' + n + ' ' + d.getDate() + '</h3>';
+  var monthName = monthMap[d.getMonth()];
+  var dateString = '<h3 class="date">' + monthName + ' ' + d.getDate() + '</h3>';
   dateString += '<h3 class="time">' + d.toLocaleTimeString() + '</h3>';
   if (last_hour != hour) {buildList();}
   last_hour = hour;
@@ -217,6 +204,35 @@ function sortArrayByKey(critterArray) {
   return result;
 }
 
+function buildYear(critterMonths) {
+  let yearNode = document.createElement('DIV');
+  yearNode.classList.add('year');
+  for (var i=0; i<12; i++) {
+    var monthNode = document.createElement('DIV');
+    monthNode.classList.add('month');
+    if (getSeason(i) !== '') monthNode.classList.add(getSeason(i));
+    if (critterMonths.indexOf(i)>=0) monthNode.classList.add('appear');
+    if (i === month) monthNode.classList.add('current');
+    //monthNode.innerText = (monthMap[i] === undefined) ? '' : monthMap[i][0];
+    yearNode.appendChild(monthNode);
+  }
+  return yearNode.outerHTML;
+}
+
+function buildDay(critterHours) {
+  let dayNode = document.createElement('DIV');
+  dayNode.classList.add('day');
+  for (var i=0; i<24; i++) {
+    var hourNode = document.createElement('DIV');
+    hourNode.classList.add('hour');
+    hourNode.classList.add((i>5 && i<18) ? 'daytime' : 'nighttime');
+    if (critterHours.indexOf(i)>=0) hourNode.classList.add('appear');
+    if (i === hour) hourNode.classList.add('current');
+    dayNode.appendChild(hourNode);
+  }
+  return dayNode.outerHTML;
+}
+
 function buildList() {
   window.scrollTo(0,0);
   var grid = document.getElementById("cards");
@@ -237,6 +253,8 @@ function buildList() {
     if (info['info-price']) itemStr += '<div class="critter-info">' + critter.price.toLocaleString() + '</div>';
     if (info['info-location']) itemStr += '<div class="critter-info">' + critter.location + '</div>';
     if (info['info-size'] && toggles.type === "fish") itemStr += '<div class="critter-info">' + critter.size + '</div>';
+    if (info['info-month']) itemStr += '<div class="critter-info">' + buildYear(critter[toggles.hemisphere]) + '</div>';
+    if (info['info-time']) itemStr += '<div class="critter-info">' + buildDay(critter.hours) + '</div>';
     itemStr += '</article>';
     gridStr += itemStr;
   }
@@ -292,4 +310,229 @@ function showOffset() {
   var offsetForm = document.getElementById("offset");
   if (offsetForm.classList.contains('hidden')) document.getElementById("settings-menu").classList.remove('hidden');
   offsetForm.classList.toggle('hidden');
+}
+
+function getSeason(month) {
+  let result = '';
+  let hem = (hemisphere === 'northern');
+  switch(true) {
+    case (month == 11 || month < 2):
+      result = hem ? 'winter' : 'summer';
+      break;
+    case (month < 5):
+      result = hem ? 'spring' : 'fall';
+      break;
+    case (month < 8):
+      result = hem ? 'summer' : 'winter';
+      break;
+    case (month < 11):
+      result = hem ? 'fall' : 'spring';
+      break;
+    default:
+      console.log('unrecognized month');
+  }
+  return result;
+}
+
+
+/* Control for settings menu */
+document.querySelectorAll('.sort').forEach(item => {
+  item.addEventListener('click', function(ev) {
+      setSortingOrder(ev.target.id);
+  });
+});
+
+document.querySelectorAll('.filter').forEach(item => {
+  item.addEventListener('click', function(ev) {
+      updateSetting("filters",ev.target.id,true);
+  });
+  updateSetting("filters",item.id);
+});
+
+document.querySelectorAll('.toggle').forEach(item => {
+  item.addEventListener('click', function(ev) {
+      updateSetting("toggles",ev.target.id,true);
+  });
+  updateSetting("toggles",item.id);
+});
+
+document.querySelectorAll('.info').forEach(item => {
+  item.addEventListener('click', function(ev) {
+      updateSetting("info",ev.target.id,true);
+  });
+  updateSetting("info",item.id);
+});
+
+function setSortingOrder(column) {
+  if (column === settings["order"][0][0]) {
+      settings["order"][0][1] = settings["order"][0][1] === 'asc' ? 'desc' : 'asc';
+  } else {
+      for (var i = settings["order"].length-1; i>0; i--) {
+          console.log(settings["order"][i][0],settings["order"][i-1][0]);
+          settings["order"][i] = settings["order"][i-1];
+      }
+      settings["order"][0] = [column,'desc'];
+  }
+  writeSetting("order");
+  updateSortingBadges();
+  buildList();
+}
+
+function updateSortingBadges() {
+  document.querySelectorAll('.sort .badge').forEach(item => {
+      let column = item.parentNode.id;
+      let s = ' ';
+      for (var i = 0; i < settings["order"].length; i++) {
+          if (settings["order"][i][0] === column) {
+              s = i+1;
+              if (settings["order"][i][1] === 'desc') {
+                  s += '*';
+              }
+              break;
+          }
+      }
+      item.innerHTML = s;
+  });
+}
+updateSortingBadges();
+
+function updateSetting(library,setting,clicked=false) {
+  switch(library) {
+      case "toggles":
+          switch(setting) {
+              case "type":
+                  switch(settings[library][setting]) {
+                      case "fish":
+                          if (clicked) {
+                              settings[library][setting] = "bugs";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"🐟");
+                          }
+                          break;
+                      case "bugs":
+                          if (clicked) {
+                              settings[library][setting] = "fish";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"🦋");
+                          }
+                          break;
+                      default:
+                          console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
+                          return;
+                  }
+                  buildList();
+                  break;
+              case "hemisphere":
+                  switch(settings[library][setting]) {
+                      case "northern":
+                          if (clicked) {
+                              settings[library][setting] = "southern";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"N");
+                          }
+                          break;
+                      case "southern":
+                          if (clicked) {
+                              settings[library][setting] = "northern";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"S");
+                          }
+                          break;
+                      default:
+                          console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
+                          return;
+                  }
+                  buildList();
+                  break;
+              case "theme":
+                  switch(settings[library][setting]) {
+                      case "light":
+                          if (clicked) {
+                              settings[library][setting] = "dark";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"☀️");
+                          }
+                          break;
+                      case "dark":
+                          if (clicked) {
+                              settings[library][setting] = "light";
+                              updateSetting(library,setting);
+                          } else {
+                              setBadgeContent(setting,"🌘");
+                          }
+                          break;
+                      default:
+                          console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
+                          return;
+                  }
+                  document.getElementsByTagName("BODY")[0].setAttribute("data-theme",settings[library][setting]);
+                  break;
+              default:
+                  console.log("Couldn't find",setting,"in",library);
+                  return;
+          }
+          writeSetting(library);
+          break;
+      case "filters":
+          switch(settings[library][setting]) {
+              case true:
+                  if (clicked) {
+                      settings[library][setting] = !settings[library][setting];
+                      updateSetting(library,setting);
+                  } else {
+                      setBadgeContent(setting,"✅");
+                  }
+                  break;
+              case false:
+                  if (clicked) {
+                      settings[library][setting] = !settings[library][setting];
+                      updateSetting(library,setting);
+                  } else {
+                      setBadgeContent(setting,"❌");
+                  }
+                  break;
+              default:
+                  console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
+                  return;
+          }
+          writeSetting(library);
+          buildList();
+          break;
+      case "info":
+          switch(settings[library][setting]) {
+              case true:
+                  if (clicked) {
+                      settings[library][setting] = !settings[library][setting];
+                      updateSetting(library,setting);
+                  } else {
+                      setBadgeContent(setting,"✅");
+                  }
+                  break;
+              case false:
+                  if (clicked) {
+                      settings[library][setting] = !settings[library][setting];
+                      updateSetting(library,setting);
+                  } else {
+                      setBadgeContent(setting,"❌");
+                  }
+                  break;
+              default:
+                  console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
+                  return;
+          }
+          writeSetting(library);
+          buildList();
+          break;
+      default:
+          console.log("Invalid settings library:",library);
+  }
+}
+
+function setBadgeContent(setting,content) {
+  document.querySelector('#' + setting + ' .badge').innerHTML = content;
 }

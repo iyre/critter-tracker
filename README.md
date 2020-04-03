@@ -33,4 +33,4 @@ https://iyre.github.io/critter-tracker/
 - [X] service worker
 - [X] images of critters
 - [X] toggle information shown
-- [ ] per-creature schedule
+- [X] per-creature schedule
