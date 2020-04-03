@@ -3,14 +3,18 @@
     "short_name": "Critters",
     "description": "See which critters are currently appearing in your game, and keep track of what you catch.",
     "icons": [{
-        "src": "images/icon-256.png",
-        "sizes": "256x256",
+        "src": "images/icon-512.png",
+        "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
+    },{
+        "src": "images/favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
     }],
     "start_url": "/critter-tracker/",
     "display": "standalone",
     "orientation" : "portrait",
-    "background_color": "#111111",
+    "background_color": "#face68",
     "theme_color": "#111111"
 }
