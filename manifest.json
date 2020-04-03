@@ -8,7 +8,7 @@
         "type": "image/png",
         "purpose": "maskable"
     }],
-    "start_url": "/critter-tracker/index.html",
+    "start_url": "/critter-tracker/",
     "display": "standalone",
     "orientation" : "portrait",
     "background_color": "#111111",
