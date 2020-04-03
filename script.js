@@ -312,21 +312,21 @@ function showOffset() {
   offsetForm.classList.toggle('hidden');
 }
 
-function getSeason(month) {
-  let result = '';
-  let hem = (hemisphere === 'northern');
+function getSeason(m) {
+  let result = 'unknown';
+  let north = (settings.toggles.hemisphere === 'northern');
   switch(true) {
-    case (month == 11 || month < 2):
-      result = hem ? 'winter' : 'summer';
+    case (m == 11 || m < 2):
+      result = north ? 'winter' : 'summer';
       break;
-    case (month < 5):
-      result = hem ? 'spring' : 'fall';
+    case (m < 5):
+      result = north ? 'spring' : 'fall';
       break;
-    case (month < 8):
-      result = hem ? 'summer' : 'winter';
+    case (m < 8):
+      result = north ? 'summer' : 'winter';
       break;
-    case (month < 11):
-      result = hem ? 'fall' : 'spring';
+    case (m < 11):
+      result = north ? 'fall' : 'spring';
       break;
     default:
       console.log('unrecognized month');
