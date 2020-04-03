@@ -6,11 +6,7 @@
         "src": "images/icon-512.png",
         "sizes": "512x512",
         "type": "image/png",
-        "purpose": "maskable"
-    },{
-        "src": "images/favicon.png",
-        "sizes": "512x512",
-        "type": "image/png"
+        "purpose": "any maskable"
     }],
     "start_url": "/critter-tracker/",
     "display": "standalone",
