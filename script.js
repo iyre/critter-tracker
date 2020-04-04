@@ -18,10 +18,10 @@ var settings = {
   },
   "info" : {
       "info-sprite" : true,
-      "info-price" : false,
+      "info-price" : true,
       "info-location" : true,
       "info-size" : true,
-      "info-month" : false,
+      "info-month" : true,
       "info-time" : true
   }
 };
@@ -47,8 +47,8 @@ var settingsConfig = {
     "info-price" : "Price",
     "info-location" : "Location",
     "info-size" : "Size",
-    "info-time" : "Month",
-    "info-month" : "Time"
+    "info-month" : "Month",
+    "info-time" : "Time"
   }]
 };
 
@@ -411,7 +411,7 @@ function setSortingOrder(column) {
       settings["order"][0][1] = settings["order"][0][1] === 'asc' ? 'desc' : 'asc';
   } else {
       for (var i = settings["order"].length-1; i>0; i--) {
-          console.log(settings["order"][i][0],settings["order"][i-1][0]);
+          //console.log(settings["order"][i][0],settings["order"][i-1][0]);
           settings["order"][i] = settings["order"][i-1];
       }
       settings["order"][0] = [column,'asc'];
