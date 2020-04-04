@@ -60,7 +60,7 @@ var offset = readSetting("offset");
 
 initStorage();
 buildMenu();
-setUpSettingsListeners();
+addSettingsListeners();
 updateSortingBadges();
 time();
 setInterval(time, 1000);
@@ -352,7 +352,7 @@ function isHidden(id) {
 function showOffset() {
   if (isHidden("settings-menu")) {
     toggleHidden("settings-menu");
-    if (isHidden("offset")) return;
+    if (!isHidden("offset")) return;
   }
   toggleHidden("offset");
 }
@@ -379,7 +379,7 @@ function getSeason(m) {
   return result;
 }
 
-function setUpSettingsListeners() {
+function addSettingsListeners() {
   /* Control for settings menu */
   document.querySelectorAll('.order').forEach(item => {
     item.addEventListener('click', function(ev) {
