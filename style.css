@@ -262,7 +262,7 @@ footer * {
   pointer-events: none;
 }
 
-.menu {
+#menu {
   display: flex;
   flex-flow: column wrap;
   justify-content: start;
@@ -273,23 +273,23 @@ footer * {
 }
 
 @media screen and (max-width: 45em) {
-  .menu {
+  #menu {
     height: 20em;
   }
 }
 @media screen and (max-width: 35em) {
-  .menu {
+  #menu {
     height: 28em;
   }
 }
 @media screen and (max-width: 25em) {
-  .menu {
+  #menu {
     height: 100vh;
     font-size: .9em;
   }
 }
   
-.menu h2 {
+#menu h2 {
   margin: 0;
   padding: 0 0.4em;
 }
@@ -313,17 +313,15 @@ footer * {
   border: 1px solid var(--fg-color-2);
   border-radius: 2px;
   font-size: 1em;
-}
-
-.setting {
   grid-template-columns: 1.5em auto;
   display: inline-grid;
 }
 
-.label {
+.setting label {
   padding: 0 0.4em;
   background: none;
 }
+
 .badge {
   margin-left: 0.4em;
   font-weight: bold;

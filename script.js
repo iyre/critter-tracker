@@ -1,5 +1,5 @@
 var settings = {
-  "version" : "v0.10.0",
+  "version" : "v0.10.1",
   "caught" : [],
   "offset" : 0,
   "filters" : {
@@ -26,12 +26,81 @@ var settings = {
   }
 };
 
+var settingsConfig = {
+  filter : ["Filter",{
+    "caught" : "Caught",
+    "unavailable" : "Unavailable"
+  }],
+  order : ["Sort",{
+    "name" : "Name",
+    "price" : "Price",
+    "location" : "Location",
+    "size" : "Size"
+  }],
+  toggle : ["General",{
+    "type" : "Critters",
+    "hemisphere" : "Hemisphere",
+    "theme" : "Theme"
+  }],
+  info : ["Info",{
+    "info-sprite" : "Picture",
+    "info-price" : "Price",
+    "info-location" : "Location",
+    "info-size" : "Size",
+    "info-time" : "Month",
+    "info-month" : "Time"
+  }]
+};
+
 var monthMap = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var month = 99;
+var hour = 99;
+var last_hour = 99; //for automatic update on the hour change
+var offset = readSetting("offset");
+
+initStorage();
+buildMenu();
+setUpSettingsListeners();
+updateSortingBadges();
+time();
+setInterval(time, 1000);
+document.getElementById('version').innerText = settings.version;
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/critter-tracker/sw.js')
     .then(reg => console.log('service worker registered'))
     .catch(err => console.log('service worker not registered', err));
+}
+
+function buildMenu() {
+  let menu = document.getElementById('menu');
+  menu.appendChild(buildOptionGroup('toggle'));
+  menu.appendChild(buildOptionGroup('info'));
+  menu.appendChild(buildOptionGroup('order'));
+  menu.appendChild(buildOptionGroup('filter'));
+}
+
+function buildOptionGroup(configName) {
+  let config = settingsConfig[configName];
+  let group = document.createElement('DIV');
+  group.classList.add('menu-group');
+  let groupHeading = document.createElement('H2');
+  groupHeading.innerText = config[0];
+  group.appendChild(groupHeading);
+  for (var i in config[1]) {
+    let option = document.createElement('DIV');
+    option.id = i;
+    option.classList.add('setting');
+    option.classList.add(configName);
+    let optionBadge = document.createElement('DIV');
+    optionBadge.classList.add('badge');
+    option.appendChild(optionBadge);
+    let optionLabel = document.createElement('LABEL');
+    optionLabel.innerText = config[1][i];
+    option.appendChild(optionLabel);
+    group.appendChild(option);
+  }
+  return group;
 }
 
 function readSetting(name,raw=false) {
@@ -93,10 +162,6 @@ function initStorage() {
   }
 }
 
-initStorage();
-
-document.getElementById('version').innerHTML = settings.version;
-
 function setTime() {
   var newTime = document.getElementById("datetime").value;
   if (newTime == "") {return;}
@@ -113,40 +178,19 @@ function resetTime() {
   time();
 }
 
-var clock = document.getElementById('clock');
-var month = 99;
-var hour = 99;
-var last_hour = 99; //for automatic update on the hour change
-var offset = readSetting("offset");
-
 function time() {
-  var d = new Date();
+  let clock = document.getElementById('clock');
+  let d = new Date();
   d.setTime(d.getTime() + offset);
   hour = d.getHours();
   month = d.getMonth();
-  var monthName = monthMap[d.getMonth()];
-  var dateString = '<h3 class="date">' + monthName + ' ' + d.getDate() + '</h3>';
+  let monthName = monthMap[d.getMonth()];
+  let dateString = '<h3 class="date">' + monthName + ' ' + d.getDate() + '</h3>';
   dateString += '<h3 class="time">' + d.toLocaleTimeString() + '</h3>';
   if (last_hour != hour) {buildList();}
   last_hour = hour;
   clock.innerHTML = dateString;
 }
-
-function setDatePlaceholder() {
-  var localTime = new Date(Date.now() + offset);
-  var localTimeISO = localTime.toLocaleString().slice(0, -1);
-  var dateTimeInput = document.getElementById('datetime');
-  console.log(Date.now())
-  console.log(offset);
-  console.log(localTime);
-  console.log(localTimeISO);
-  dateTimeInput.value = localTimeISO;//d.toISOString();
-  console.log(dateTimeInput.value)
-}
-
-time();
-setInterval(time, 1000);
-//setDatePlaceholder()
 
 function filterCaught(filtered) {
   var caught = readSetting("caught");
@@ -177,12 +221,10 @@ function compareValues(key, order = 'asc') {
       // property doesn't exist on either object
       return 0;
     }
-
     const varA = (typeof a[key] === 'string')
       ? a[key].toUpperCase() : a[key];
     const varB = (typeof b[key] === 'string')
       ? b[key].toUpperCase() : b[key];
-
     let comparison = 0;
     if (varA > varB) {
       comparison = 1;
@@ -190,7 +232,7 @@ function compareValues(key, order = 'asc') {
       comparison = -1;
     }
     return (
-      (order === 'asc') ? (comparison * -1) : comparison
+      (order === 'desc') ? (comparison * -1) : comparison
     );
   };
 }
@@ -242,9 +284,7 @@ function buildList() {
   var filtered = filterValue(critters,'type',toggles.type);
   if (filters.caught) {filtered = filterCaught(filtered);}
   if (filters.unavailable) {filtered = filterTime(filtered,toggles.hemisphere);}
-
   filtered = sortArrayByKey(filtered);
-  
   var gridStr = ''
   for (critter of filtered) {
     var itemStr = '<article class="' + critter.type + (isCaught(critter.id) ? ' checked' : '') + '" id="' + critter.id + '">';
@@ -300,16 +340,21 @@ function toggleCaught(id) {
   writeSetting("caught");
 }
 
-function toggleSettings() {
-  var menu = document.getElementById("settings-menu");
-  menu.classList.toggle('hidden');
+function toggleHidden(id){
+  document.getElementById(id).classList.toggle('hidden');
+}
 
+function isHidden(id) {
+  let ele = document.getElementById(id);
+  return ele.classList.contains('hidden');
 }
 
 function showOffset() {
-  var offsetForm = document.getElementById("offset");
-  if (offsetForm.classList.contains('hidden')) document.getElementById("settings-menu").classList.remove('hidden');
-  offsetForm.classList.toggle('hidden');
+  if (isHidden("settings-menu")) {
+    toggleHidden("settings-menu");
+    if (isHidden("offset")) return;
+  }
+  toggleHidden("offset");
 }
 
 function getSeason(m) {
@@ -334,34 +379,32 @@ function getSeason(m) {
   return result;
 }
 
-
-/* Control for settings menu */
-document.querySelectorAll('.sort').forEach(item => {
-  item.addEventListener('click', function(ev) {
+function setUpSettingsListeners() {
+  /* Control for settings menu */
+  document.querySelectorAll('.order').forEach(item => {
+    item.addEventListener('click', function(ev) {
       setSortingOrder(ev.target.id);
+    });
   });
-});
-
-document.querySelectorAll('.filter').forEach(item => {
-  item.addEventListener('click', function(ev) {
-      updateSetting("filters",ev.target.id,true);
+  document.querySelectorAll('.filter').forEach(item => {
+    item.addEventListener('click', function(ev) {
+        updateSetting("filters",ev.target.id,true);
+    });
+    updateSetting("filters",item.id);
   });
-  updateSetting("filters",item.id);
-});
-
-document.querySelectorAll('.toggle').forEach(item => {
-  item.addEventListener('click', function(ev) {
-      updateSetting("toggles",ev.target.id,true);
+  document.querySelectorAll('.toggle').forEach(item => {
+    item.addEventListener('click', function(ev) {
+        updateSetting("toggles",ev.target.id,true);
+    });
+    updateSetting("toggles",item.id);
   });
-  updateSetting("toggles",item.id);
-});
-
-document.querySelectorAll('.info').forEach(item => {
-  item.addEventListener('click', function(ev) {
-      updateSetting("info",ev.target.id,true);
+  document.querySelectorAll('.info').forEach(item => {
+    item.addEventListener('click', function(ev) {
+        updateSetting("info",ev.target.id,true);
+    });
+    updateSetting("info",item.id);
   });
-  updateSetting("info",item.id);
-});
+}
 
 function setSortingOrder(column) {
   if (column === settings["order"][0][0]) {
@@ -371,7 +414,7 @@ function setSortingOrder(column) {
           console.log(settings["order"][i][0],settings["order"][i-1][0]);
           settings["order"][i] = settings["order"][i-1];
       }
-      settings["order"][0] = [column,'desc'];
+      settings["order"][0] = [column,'asc'];
   }
   writeSetting("order");
   updateSortingBadges();
@@ -379,7 +422,7 @@ function setSortingOrder(column) {
 }
 
 function updateSortingBadges() {
-  document.querySelectorAll('.sort .badge').forEach(item => {
+  document.querySelectorAll('.order .badge').forEach(item => {
       let column = item.parentNode.id;
       let s = ' ';
       for (var i = 0; i < settings["order"].length; i++) {
@@ -394,7 +437,6 @@ function updateSortingBadges() {
       item.innerHTML = s;
   });
 }
-updateSortingBadges();
 
 function updateSetting(library,setting,clicked=false) {
   switch(library) {
