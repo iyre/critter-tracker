@@ -58,7 +58,7 @@
   /* schedule */
   --s-bright: .6;
   --s-notappear: rgba(55,55,55,.1);
-  --s-appear: #333;
+  --s-appear: #777;
   --s-current: #fff;
 }
 
@@ -130,9 +130,9 @@ body {
   row-gap: .5em;
 }
 
-article {
+#cards article {
   transition: all 100ms ease;
-  align-items: center;
+  align-items: end;
   text-align: center;
   padding: .2em;
   margin: 0;
@@ -146,7 +146,7 @@ article {
   border: 1px solid var(--fg-border-1);
 }
 
-article h3 {
+#cards article h3 {
   color: var(--fg-color-2);
   margin: .3em;
   text-shadow: 0 0 3px black;
@@ -156,7 +156,7 @@ article h3 {
   pointer-events: none;
 }
 
-article header{
+#cards article header{
   color: var(--fg-color-3);
   box-shadow: 0 0 3px black;
   padding: .2em;
@@ -245,7 +245,6 @@ footer * {
   border-top: .2em solid var(--s-default);
   background-color: var(--s-notappear);
   border-radius: 1em;
-
 }
 
 .appear {
