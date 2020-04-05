@@ -117,7 +117,6 @@ body {
 
 #settings-menu {
   padding: 0 8px;
-  text-align: left;
 }
 
 #cards {
@@ -288,6 +287,7 @@ footer * {
   align-content: center;
   font-size: 1.2em;
   height: 18em;
+  text-align:left;
   color: var(--fg-color-2);
 }
 
