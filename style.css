@@ -117,6 +117,7 @@ body {
 
 #settings-menu {
   padding: 0 8px;
+  text-align: left;
 }
 
 #cards {
@@ -131,16 +132,12 @@ body {
 }
 
 #cards article {
+  display: flex;
+  flex-direction: column;
   transition: all 100ms ease;
-  align-items: end;
-  text-align: center;
   padding: .2em;
-  margin: 0;
   background-color: var(--bg-card);
   border-radius: 2px;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  row-gap: .2em;
   cursor: pointer;
   box-shadow: 0 0 5px black;
   border: 1px solid var(--fg-border-1);
@@ -157,7 +154,10 @@ body {
 }
 
 #cards article header{
-  color: var(--fg-color-3);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 3px black;
   padding: .2em;
   border-radius: 2px;
@@ -175,13 +175,15 @@ body {
   width: 64px;
   height: 64px;
   opacity: var(--img-opacity);
-  justify-self: center;
+  align-self: center;
+  margin-top: .2em;
 }
 
 .critter-info {
   background-color: var(--bg-info);
   color: var(--fg-color-1);
   box-shadow: 0 0 1px rgba(0,0,0,0.5);
+  margin-top: .2em;
   padding: .2em;
   border-radius: 2px;
 }
