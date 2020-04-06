@@ -1,4 +1,4 @@
-var version = 'v1.0';
+var version = 'v1.1';
 const staticCacheName = 'critter-tracker-' + version;
 const assets = [
   '/critter-tracker/',

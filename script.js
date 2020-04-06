@@ -1,5 +1,5 @@
 var settings = {
-  "version" : "v1.0",
+  "version" : "v1.1",
   "caught" : [],
   "offset" : 0,
   "filters" : {
@@ -22,7 +22,9 @@ var settings = {
       "info-location" : true,
       "info-size" : true,
       "info-month" : true,
-      "info-time" : true
+      "info-time" : true,
+      "info-next" : false,
+      "info-last" : false
   }
 };
 
@@ -32,10 +34,13 @@ var settingsConfig = {
     "unavailable" : "Unavailable"
   }],
   order : ["Sort",{
+    "index" : "Index",
     "name" : "Name",
     "price" : "Price",
     "location" : "Location",
-    "size" : "Size"
+    "size" : "Size",
+    "next" : "Available",
+    "last" : "Departure"
   }],
   toggle : ["General",{
     "type" : "Critters",
@@ -48,7 +53,9 @@ var settingsConfig = {
     "info-location" : "Location",
     "info-size" : "Size",
     "info-month" : "Month",
-    "info-time" : "Time"
+    "info-time" : "Time",
+    "info-next" : "Available",
+    "info-last" : "Departure"
   }]
 };
 
@@ -59,11 +66,11 @@ var last_hour = 99; //for automatic update on the hour change
 var offset = readSetting("offset");
 
 initStorage();
+time();
+setInterval(time, 1000);
 buildMenu();
 addSettingsListeners();
 updateSortingBadges();
-time();
-setInterval(time, 1000);
 document.getElementById('version').innerText = settings.version;
 
 if('serviceWorker' in navigator){
@@ -169,6 +176,7 @@ function setTime() {
   settings.offset = offset;
   writeSetting("offset");
   time();
+  buildList();
 }
 
 function resetTime() {
@@ -187,9 +195,32 @@ function time() {
   let monthName = monthMap[d.getMonth()];
   let dateString = '<h3 class="date">' + monthName + ' ' + d.getDate() + '</h3>';
   dateString += '<h3 class="time">' + d.toLocaleTimeString() + '</h3>';
-  if (last_hour != hour) {buildList();}
+  if (last_hour != hour) {updateNextAvailability();buildList();}
   last_hour = hour;
   clock.innerHTML = dateString;
+}
+
+function dateToInfo(dt) {
+  let today = new Date();
+  today.setTime(today.getTime() + offset);
+  let m = dt.getMonth();
+  let mText = monthMap[m].substring(0,3);
+  let y = dt.getFullYear();
+  let h = dt.getHours();
+  let h12 = (h>12) ? h-12 : h;
+  if (h12===0) h12=12;
+  let ampm = h >= 12 ? 'PM' : 'AM';
+  let result = mText + ' ' + y;
+  if (m===month) {
+    if (h===hour) result = 'Now';
+    else if (h > hour) result = 'Today ' + h12 + ampm;
+    else if (h < hour) result = 'Today ' + h12 + ampm;
+  }
+  else {
+    result = mText;
+    if (dt.getTime()===0) result = 'Never';
+  }
+  return result;
 }
 
 function filterCaught(filtered) {
@@ -246,6 +277,55 @@ function sortArrayByKey(critterArray) {
   return result;
 }
 
+// calculate the milliseconds until a critter will be available based on the current date
+function findNextDeparture(a,startDate,next,monthArr) {
+  if (next.getMonth()!==month) return startDate;
+  let dt = new Date(next);
+  for (var i=0;i<=11;i++) {
+    let testMonthDate = new Date(dt);
+    testMonthDate.setMonth(testMonthDate.getMonth()+i);
+    let testMonth = monthArr.indexOf(testMonthDate.getMonth());
+    if (testMonth===-1) {
+      return testMonthDate; //milliseconds until available
+    }
+    dt.setDate(1);
+  }
+  return (new Date(0));
+}
+
+// calculate the milliseconds until a critter will be available based on the current date
+function findNextArrival(a,startDate,monthArr,hourArr) {
+  let dt = new Date(startDate);
+  for (var i=0;i<=11;i++) {
+    let testMonthDate = new Date(dt);
+    testMonthDate.setMonth(testMonthDate.getMonth()+i);
+    let testMonth = monthArr.indexOf(testMonthDate.getMonth());
+    if (testMonth>=0) {
+      for (var j=0;j<=23;j++) {
+        let testHourDate = new Date(testMonthDate);
+        testHourDate.setHours(testHourDate.getHours()+j);
+        let testHour = hourArr.indexOf(testHourDate.getHours());
+        if (testHour>=0) {
+          return testHourDate; //milliseconds until available
+        }
+      }
+    }
+    dt.setDate(1);
+    dt.setHours(0); //set start hour to midnight after current month checked
+  }
+}
+
+// go through the critter list and update time until next availability(for sorting)
+function updateNextAvailability() {
+  let start = new Date();
+  start.setTime(start.getTime() + offset);
+  start.setHours(start.getHours(),0,0,0);
+  critters.forEach((critter) => {
+    critter['next']=findNextArrival(critter.id,start,critter[settings.toggles.hemisphere],critter.hours);
+    critter['last']=findNextDeparture(critter.id,start,critter['next'],critter[settings.toggles.hemisphere]);
+  });
+}
+
 function buildYear(critterMonths) {
   let yearNode = document.createElement('DIV');
   yearNode.classList.add('year');
@@ -295,6 +375,8 @@ function buildList() {
     if (info['info-size'] && toggles.type === "fish") itemStr += '<div class="critter-info">' + critter.size + '</div>';
     if (info['info-month']) itemStr += '<div class="critter-info">' + buildYear(critter[toggles.hemisphere]) + '</div>';
     if (info['info-time']) itemStr += '<div class="critter-info">' + buildDay(critter.hours) + '</div>';
+    if (info['info-next']) itemStr += '<div class="critter-info">' + dateToInfo(critter.next) + '</div>';
+    if (info['info-last']) itemStr += '<div class="critter-info">' + dateToInfo(critter.last,true) + '</div>';
     itemStr += '</article>';
     gridStr += itemStr;
   }
@@ -341,7 +423,8 @@ function toggleCaught(id) {
 }
 
 function toggleHidden(id){
-  document.getElementById(id).classList.toggle('hidden');
+  document.getElementById(id).classList.toggle('open');
+  document.body.classList.toggle('modal-open');
 }
 
 function isHidden(id) {

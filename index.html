@@ -12,10 +12,12 @@
     </head>
     <body>
         <header class="sticky">
-            <div id="clock" onclick='showOffset()'></div>
+            <div id="clock"></div>
             <div id='settings-icon' onclick='toggleHidden("settings-menu")'>⚙️</div>
-            <div id='settings-menu' class='hidden'>
-                <div id='offset' class='hidden'>
+        </header>
+        <div id='settings-menu' class='modal'>
+            <div class='modal-content'>
+                <div id='offset'>
                     <h2>Custom Time</h2>
                     <input type='datetime-local' id='datetime'>
                     <button type='button' id='settime' onclick='setTime()'>Apply</button>
@@ -23,7 +25,7 @@
                 </div>
                 <div id="menu"></div>
             </div>
-        </header>
+        </div>
         <div id="cards"></div>
         <footer>
             <a href='https://github.com/iyre/critter-tracker'>source</a>
