@@ -18,9 +18,9 @@ var settings = {
   },
   "info" : {
       "info-sprite" : true,
-      "info-price" : true,
+      "info-price" : false,
       "info-location" : true,
-      "info-size" : true,
+      "info-size" : false,
       "info-month" : true,
       "info-time" : true,
       "info-next" : false,
@@ -214,7 +214,7 @@ function dateToInfo(dt) {
   if (m===month) {
     if (h===hour) result = 'Now';
     else if (h > hour) result = 'Today ' + h12 + ampm;
-    else if (h < hour) result = 'Today ' + h12 + ampm;
+    else if (h < hour) result = 'Tomorrow ' + h12 + ampm;
   }
   else {
     result = mText;
