@@ -1,5 +1,5 @@
 # Critter Tracker
-![alt text](https://iyre.github.io/critter-tracker/images/favicon.png "Project Logo")
+![Project Logo](images/favicon.png)
 ###### See which critters are currently appearing in your game, and keep track of what you catch.
 
 https://iyre.github.io/critter-tracker/
