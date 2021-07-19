@@ -14,6 +14,7 @@ from lxml import html
 
 fish_url = 'https://animalcrossing.fandom.com/wiki/Fish_(New_Horizons)'
 bugs_url = 'https://animalcrossing.fandom.com/wiki/Bugs_(New_Horizons)'
+creatures_url = 'https://animalcrossing.fandom.com/wiki/Deep-sea_creatures_(New_Horizons)'
 out_file = 'critters.json'
 data = []
 
@@ -23,7 +24,7 @@ def get_table(url):
     tbl = soup.find_all('table')
     for table in tbl:
         df = pd.read_html(str(table))[0]
-        if df.shape[0] == 80:
+        if df.shape[0] == 80 or df.shape[0] == 40:
             return df
     raise Exception("Didn't find any tables with a length of 80.")
 
@@ -38,8 +39,15 @@ def add_critter(critter_type,critter,index):
     entry['type'] = critter_type
     entry['name'] = critter['Name']
     entry['price'] = critter['Price']
-    entry['location'] = critter['Location']
-    entry['size'] = critter['Shadow size'] if critter_type == 'fish' else ''
+    if critter_type == 'fish':
+        entry['location'] = critter['Location']
+        entry['size'] = critter['Shadow size']
+    elif critter_type == 'bugs':
+        entry['location'] = critter['Location']
+        entry['size'] = ''
+    elif critter_type == 'creatures':
+        entry['location'] = critter['Swimming pattern']
+        entry['size'] = critter['Shadow size']
     entry['hours'] = hours
     entry['northern'] = months_north
     entry['southern'] = months_south
@@ -69,7 +77,7 @@ def parse_hours(hour_str):
     if hour_str == 'All day':
         hours = [*range(0,24)]
     else:
-        parsed = re.findall(r'\d+ [A-Z]+',hour_str)
+        parsed = re.findall(r'\d+ *[A-Z]+',hour_str)
         parsed_hours = []
         for hour in parsed:
             time = datetime.datetime.strptime(hour, '%I %p')
@@ -89,12 +97,16 @@ def list_hours(start, end):
     return hours
 
 def process(critter_type,action='direct'):
-    url = bugs_url if critter_type == 'bugs' else fish_url
+    if critter_type == 'fish':
+        url = fish_url
+    elif critter_type == 'bugs':
+        url = bugs_url
+    elif critter_type == 'creatures':
+        url = creatures_url
     df = None
     if action == 'from_csv':
         df = pd.read_csv(critter_type + '.csv')
     else:
-        url = bugs_url if critter_type == 'bugs' else fish_url
         df = get_table(url)
     if action == 'to_csv':
         df.to_csv(critter_type + '.csv', index=False)
@@ -118,13 +130,16 @@ def main():
     if args.write:
         process('fish','to_csv')
         process('bugs','to_csv')
+        process('creatures','to_csv')
         return
     elif args.read:
         process('fish','from_csv')
         process('bugs','from_csv')
+        process('creatures','from_csv')
     else:
         process('fish')
         process('bugs')
+        process('creatures')
     write_file()
 
 main()

@@ -14,13 +14,14 @@ import argparse
 sprites_dir = 'sprites'
 urls = {
     'bugs' : 'https://animalcrossing.fandom.com/wiki/Bugs_(New_Horizons)',
-    'fish' : 'https://animalcrossing.fandom.com/wiki/Fish_(New_Horizons)'
+    'fish' : 'https://animalcrossing.fandom.com/wiki/Fish_(New_Horizons)',
+    'creatures' : 'https://animalcrossing.fandom.com/wiki/Deep-sea_creatures_(New_Horizons)'
 } 
 
 # for finding index number by critter name
 with open('critters.json') as f:
     critters_json = json.load(f)
-critters={'fish':{},'bugs':{}}
+critters={'fish':{},'bugs':{},'creatures':{}}
 for i in critters_json:
     critters[i['type']].update({i['id']:i['index']})
 
@@ -54,9 +55,11 @@ def main():
     if args.index:
         download_images('bugs',True) 
         download_images('fish',True)
+        download_images('creatures',True)
         return
     else:
         download_images('bugs') 
         download_images('fish')
+        download_images('creatures')
 
 main()
