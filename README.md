@@ -22,11 +22,11 @@ __Name__ | __Description__
 -------- | ---------------
 Picture  | Image of the critter
 Price    | Shop's buy price
-Location | Where the critter can appear
+Location | Where the critter can appear (or how it can be found)
 Size     | Appearance of the shadow (fish)
 Month    | Visiualize months in which the critter can be found
 Time     | Hours during which the critter can appear
-Availibility | When the critter can next be found
+Availability | When the critter can next be found
 Departure    | Next month when the critter will be unavailable
 
 * __Sort__

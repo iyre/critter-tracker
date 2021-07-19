@@ -5,6 +5,7 @@
   --bg-info: #CDD2C1;
   --bg-fish: #2196F3;
   --bg-bugs: #4CAF50;
+  --bg-creatures: #BE3A25;
 
   --bg-set: #EEE;
   --fg-set: #000;
@@ -43,6 +44,7 @@
   --bg-info: #000;
   --bg-fish: #000;
   --bg-bugs: #000;
+  --bg-creatures: #000;
 
   --bg-set: #BBB;
   --fg-set: #222;
@@ -192,6 +194,10 @@ body.modal-open {
 
 .bugs header{
   background-color: var(--bg-bugs);
+}
+
+.creatures header{
+  background-color: var(--bg-creatures);
 }
 
 .critter-image {

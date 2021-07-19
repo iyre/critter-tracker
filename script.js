@@ -372,7 +372,7 @@ function buildList() {
     if (info['info-sprite']) itemStr += '<div class="critter-image" style="background:url(&apos;images/sprites/' + critter.type + '.png&apos;) 0 -' + (critter.index * 64)  + 'px;background-size:100%;"></div>';
     if (info['info-price']) itemStr += '<div class="critter-info">' + critter.price.toLocaleString() + '</div>';
     if (info['info-location']) itemStr += '<div class="critter-info">' + critter.location + '</div>';
-    if (info['info-size'] && toggles.type === "fish") itemStr += '<div class="critter-info">' + critter.size + '</div>';
+    if (info['info-size'] && toggles.type != "bugs") itemStr += '<div class="critter-info">' + critter.size + '</div>';
     if (info['info-month']) itemStr += '<div class="critter-info">' + buildYear(critter[toggles.hemisphere]) + '</div>';
     if (info['info-time']) itemStr += '<div class="critter-info">' + buildDay(critter.hours) + '</div>';
     if (info['info-next']) itemStr += '<div class="critter-info">' + dateToInfo(critter.next) + '</div>';
@@ -537,12 +537,20 @@ function updateSetting(library,setting,clicked=false) {
                           break;
                       case "bugs":
                           if (clicked) {
-                              settings[library][setting] = "fish";
+                              settings[library][setting] = "creatures";
                               updateSetting(library,setting);
                           } else {
                               setBadgeContent(setting,"🦋");
                           }
                           break;
+                      case "creatures":
+                        if (clicked) {
+                            settings[library][setting] = "fish";
+                            updateSetting(library,setting);
+                        } else {
+                            setBadgeContent(setting,"🐙");
+                        }
+                        break;
                       default:
                           console.log("Invalid setting:",setting,"[",settings[library][setting],"]");
                           return;
